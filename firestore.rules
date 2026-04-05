@@ -1,0 +1,24 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 診断イベントログ — 書き込みのみ許可（匿名・個人情報なし）
+    match /diagnosisLogs/{logId} {
+      allow create: if true;
+      allow read, update, delete: if false;
+    }
+
+    // アフィリエイトクリックログ — 書き込みのみ許可
+    match /affiliateClicks/{clickId} {
+      allow create: if true;
+      allow read, update, delete: if false;
+    }
+
+    // 記事データ — 読み取り許可、書き込みは管理者のみ（コンソールから直接）
+    match /articles/{articleId} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}
