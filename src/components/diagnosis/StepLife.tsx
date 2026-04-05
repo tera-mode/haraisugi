@@ -4,12 +4,14 @@ import type { LifeOption } from '@/lib/diagnosis/types';
 import Chip from '@/components/common/Chip';
 
 type Category = {
+  icon: string;
   label: string;
   options: { value: LifeOption; label: string }[];
 };
 
 const CATEGORIES: Category[] = [
   {
+    icon: '🏥',
     label: '医療',
     options: [
       { value: 'medical_over100k', label: '医療費が年10万円超' },
@@ -20,6 +22,7 @@ const CATEGORIES: Category[] = [
     ],
   },
   {
+    icon: '🏠',
     label: '住宅',
     options: [
       { value: 'housing_loan', label: '住宅ローンあり' },
@@ -27,6 +30,7 @@ const CATEGORIES: Category[] = [
     ],
   },
   {
+    icon: '🛡️',
     label: '保険',
     options: [
       { value: 'earthquake_insurance', label: '地震保険に加入中' },
@@ -34,18 +38,21 @@ const CATEGORIES: Category[] = [
     ],
   },
   {
+    icon: '🤝',
     label: '寄付',
     options: [
       { value: 'donation', label: 'NPO等に寄付した' },
     ],
   },
   {
+    icon: '⚡',
     label: '災害',
     options: [
       { value: 'disaster_theft', label: '災害・盗難の被害があった' },
     ],
   },
   {
+    icon: '💼',
     label: '仕事・自己投資',
     options: [
       { value: 'qualification', label: '資格取得費用を自腹で払った' },
@@ -55,6 +62,7 @@ const CATEGORIES: Category[] = [
     ],
   },
   {
+    icon: '📈',
     label: '投資',
     options: [
       { value: 'stock_loss', label: '株・投信で損失が出た' },
@@ -79,13 +87,13 @@ export default function StepLife({ selected, onChange }: Props) {
 
   return (
     <div>
-      <h2 className="text-xl font-bold text-gray-800 mb-1">Step 3: 生活・ライフイベント</h2>
+      <h2 className="text-xl font-bold text-gray-800 mb-1">🌱 生活・ライフイベント</h2>
       <p className="text-sm text-gray-500 mb-6">当てはまるものをすべて選んでください（複数可）</p>
       <div className="flex flex-col gap-5">
         {CATEGORIES.map(cat => (
           <div key={cat.label}>
-            <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
-              {cat.label}
+            <p className="text-xs font-semibold text-gray-500 tracking-wide mb-2">
+              {cat.icon} {cat.label}
             </p>
             <div className="flex flex-wrap gap-2">
               {cat.options.map(opt => (

@@ -3,7 +3,7 @@ type ProgressBarProps = {
   total: number;
 };
 
-const STEP_LABELS = ['収入', '家族', '生活', '現在の控除'];
+const STEP_LABELS = ['💰 収入', '👨‍👩‍👧 家族', '🌱 生活', '✅ 現在の控除'];
 
 export default function ProgressBar({ current, total }: ProgressBarProps) {
   return (

@@ -11,11 +11,11 @@ const INCOME_OPTIONS: { value: IncomeRange; label: string }[] = [
   { value: 'over1500', label: '1,500万円以上' },
 ];
 
-const WORK_OPTIONS: { value: WorkStyle; label: string; desc: string }[] = [
-  { value: 'employee', label: '会社員', desc: '給与収入のみ' },
-  { value: 'employee_side', label: '会社員＋副業', desc: '給与収入＋副業収入あり' },
-  { value: 'freelance', label: 'フリーランス', desc: '個人事業主・自営業' },
-  { value: 'executive', label: '会社役員', desc: '中小企業の役員・社長' },
+const WORK_OPTIONS: { value: WorkStyle; label: string; desc: string; icon: string }[] = [
+  { value: 'employee', label: '会社員', desc: '給与収入のみ', icon: '🏢' },
+  { value: 'employee_side', label: '会社員＋副業', desc: '給与収入＋副業収入あり', icon: '💼' },
+  { value: 'freelance', label: 'フリーランス', desc: '個人事業主・自営業', icon: '🖥️' },
+  { value: 'executive', label: '会社役員', desc: '中小企業の役員・社長', icon: '👔' },
 ];
 
 type Props = {
@@ -28,7 +28,7 @@ type Props = {
 export default function StepIncome({ income, workStyle, onIncomeChange, onWorkStyleChange }: Props) {
   return (
     <div>
-      <h2 className="text-xl font-bold text-gray-800 mb-1">Step 1: 収入</h2>
+      <h2 className="text-xl font-bold text-gray-800 mb-1">💰 収入</h2>
       <p className="text-sm text-gray-500 mb-6">あなたの年収帯と働き方を選んでください</p>
 
       <div className="mb-6">
@@ -65,6 +65,7 @@ export default function StepIncome({ income, workStyle, onIncomeChange, onWorkSt
                   : 'bg-white border-gray-200 hover:border-blue-300'
               }`}
             >
+              <span className="mr-2">{opt.icon}</span>
               <span className={`font-semibold ${workStyle === opt.value ? 'text-blue-700' : 'text-gray-800'}`}>
                 {opt.label}
               </span>

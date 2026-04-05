@@ -5,15 +5,15 @@ import type { Deduction } from '@/lib/diagnosis/types';
 import type { UserInput } from '@/lib/diagnosis/types';
 
 const URGENCY_LABELS = {
-  high: { label: '優先度：高', color: 'bg-red-100 text-red-700' },
-  medium: { label: '優先度：中', color: 'bg-yellow-100 text-yellow-700' },
-  low: { label: '優先度：低', color: 'bg-gray-100 text-gray-600' },
+  high: { label: '🔴 優先度：高', color: 'bg-red-100 text-red-700' },
+  medium: { label: '🟡 優先度：中', color: 'bg-yellow-100 text-yellow-700' },
+  low: { label: '⚪ 優先度：低', color: 'bg-gray-100 text-gray-600' },
 };
 
-const DIFFICULTY_COLOR = {
-  かんたん: 'text-green-600',
-  ふつう: 'text-yellow-600',
-  'やや手間': 'text-red-600',
+const DIFFICULTY_LABEL = {
+  かんたん: { text: '✅ かんたん', color: 'text-green-600' },
+  ふつう: { text: '🔶 ふつう', color: 'text-yellow-600' },
+  'やや手間': { text: '⚠️ やや手間', color: 'text-red-600' },
 };
 
 type Props = {
@@ -24,6 +24,7 @@ type Props = {
 export default function DeductionCard({ deduction, input }: Props) {
   const [open, setOpen] = useState(false);
   const u = URGENCY_LABELS[deduction.urgency];
+  const d = DIFFICULTY_LABEL[deduction.difficulty];
 
   return (
     <div className="border border-gray-200 rounded-xl overflow-hidden">
@@ -47,12 +48,11 @@ export default function DeductionCard({ deduction, input }: Props) {
       {open && (
         <div className="px-4 pb-4 border-t border-gray-100 bg-gray-50">
           <p className="text-sm text-gray-700 mt-3 mb-3 leading-relaxed">{deduction.description}</p>
-          <div className="flex flex-col gap-1 text-xs text-gray-600">
-            <p><span className="font-medium">次のアクション：</span>{deduction.action}</p>
-            <p><span className="font-medium">期限：</span>{deduction.deadline}</p>
+          <div className="flex flex-col gap-1.5 text-xs text-gray-600">
+            <p>👉 <span className="font-medium">次のアクション：</span>{deduction.action}</p>
+            <p>📅 <span className="font-medium">期限：</span>{deduction.deadline}</p>
             <p>
-              <span className="font-medium">難易度：</span>
-              <span className={DIFFICULTY_COLOR[deduction.difficulty]}>{deduction.difficulty}</span>
+              <span className={d.color}>{d.text}</span>
             </p>
           </div>
         </div>
