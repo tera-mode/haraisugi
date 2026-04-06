@@ -55,7 +55,7 @@ export default function HomePage() {
           税金払いすぎ診断
         </h1>
         <p className="text-sm text-gray-500">
-          あなたの払いすぎ税金、30秒で見つけます
+          あなたの払いすぎ税金、3分で見つけます
         </p>
       </div>
 

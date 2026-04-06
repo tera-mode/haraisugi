@@ -27,7 +27,7 @@ export default function ArticleLayout({ title, body, publishedAt, category }: Pr
       <div className="mt-12 bg-blue-50 border border-blue-200 rounded-xl px-5 py-5 text-center">
         <p className="text-sm font-bold text-blue-800 mb-2">税金払いすぎ診断で無料チェック</p>
         <p className="text-xs text-gray-600 mb-3">
-          あなたの年収・家族構成を入力するだけで、見逃し控除を30秒で発見します。
+          あなたの年収・家族構成を入力するだけで、見逃し控除を3分で発見します。
         </p>
         <Link
           href="/"

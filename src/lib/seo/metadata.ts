@@ -3,7 +3,7 @@ import { SITE_URL, SITE_NAME, OGP_IMAGE } from '@/lib/constants';
 
 export const siteMetadata: Metadata = {
   title: {
-    default: '税金払いすぎ診断 — あなたの取りこぼし控除を30秒で発見【無料】',
+    default: '税金払いすぎ診断 — あなたの取りこぼし控除を3分で発見【無料】',
     template: `%s | ${SITE_NAME}`,
   },
   description:
