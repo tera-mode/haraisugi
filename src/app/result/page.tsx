@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, Suspense } from 'react';
+import { Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import type { UserInput } from '@/lib/diagnosis/types';
 import { diagnose } from '@/lib/diagnosis/engine';
@@ -10,12 +10,9 @@ import TrickCard from '@/components/results/TrickCard';
 import CTASection from '@/components/results/CTASection';
 import Disclaimer from '@/components/common/Disclaimer';
 
-type Tab = 'deductions' | 'tricks';
-
 function ResultContent() {
   const router = useRouter();
   const params = useSearchParams();
-  const [tab, setTab] = useState<Tab>('deductions');
 
   const raw = params.get('d');
   if (!raw) {
@@ -55,45 +52,30 @@ function ResultContent() {
         trickCount={result.tricks.length}
       />
 
-      <div className="flex rounded-xl overflow-hidden border border-gray-200 mb-6">
-        <button
-          type="button"
-          onClick={() => setTab('deductions')}
-          className={`flex-1 py-3 text-sm font-semibold transition-colors ${
-            tab === 'deductions' ? 'bg-blue-600 text-white' : 'bg-white text-gray-600 hover:bg-gray-50'
-          }`}
-        >
-          📋 見逃し控除（{result.deductions.length}件）
-        </button>
-        <button
-          type="button"
-          onClick={() => setTab('tricks')}
-          className={`flex-1 py-3 text-sm font-semibold transition-colors ${
-            tab === 'tricks' ? 'bg-blue-600 text-white' : 'bg-white text-gray-600 hover:bg-gray-50'
-          }`}
-        >
-          💎 裏技（{result.tricks.length}件）
-        </button>
+      {/* 見逃し控除 */}
+      <h2 className="text-base font-bold text-gray-800 mb-3">
+        📋 見逃し控除（{result.deductions.length}件）
+      </h2>
+      <div className="flex flex-col gap-3 mb-10">
+        {sortedDeductions.length > 0 ? (
+          sortedDeductions.map(d => (
+            <DeductionCard key={d.id} deduction={d} input={input} />
+          ))
+        ) : (
+          <p className="text-center text-gray-500 py-8 text-sm">
+            現在の条件では見逃し控除は見つかりませんでした。
+          </p>
+        )}
       </div>
 
-      {tab === 'deductions' && (
-        <div className="flex flex-col gap-3">
-          {sortedDeductions.length > 0 ? (
-            sortedDeductions.map(d => (
-              <DeductionCard key={d.id} deduction={d} input={input} />
-            ))
-          ) : (
-            <p className="text-center text-gray-500 py-8 text-sm">
-              現在の条件では見逃し控除は見つかりませんでした。
-            </p>
-          )}
-        </div>
-      )}
-
-      {tab === 'tricks' && (
-        <div className="flex flex-col gap-6">
-          {Object.keys(tricksByCategory).length > 0 ? (
-            Object.entries(tricksByCategory).map(([cat, tricks]) => (
+      {/* 裏技 */}
+      {result.tricks.length > 0 && (
+        <>
+          <h2 className="text-base font-bold text-gray-800 mb-3">
+            💎 知らないと損する裏技（{result.tricks.length}件）
+          </h2>
+          <div className="flex flex-col gap-6 mb-10">
+            {Object.entries(tricksByCategory).map(([cat, tricks]) => (
               <div key={cat}>
                 <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
                   {cat}
@@ -102,13 +84,9 @@ function ResultContent() {
                   {tricks.map(t => <TrickCard key={t.id} trick={t} />)}
                 </div>
               </div>
-            ))
-          ) : (
-            <p className="text-center text-gray-500 py-8 text-sm">
-              現在の条件では裏技は見つかりませんでした。
-            </p>
-          )}
-        </div>
+            ))}
+          </div>
+        </>
       )}
 
       <CTASection result={result} input={input} />

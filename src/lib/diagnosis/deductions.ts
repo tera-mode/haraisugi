@@ -32,7 +32,9 @@ export const ALL_DEDUCTIONS: Deduction[] = [
       const income = getIncomeCenter(input);
       // 簡易計算：年収の約1〜2%が控除上限目安
       const limit = Math.round(income * 0.015);
-      return `返礼品分がほぼ丸ごとお得（寄付上限目安 ${limit}万円）`;
+      // 返礼品価値は寄付額の約30%（自己負担2,000円を除く実質メリット）
+      const returnValue = Math.round(limit * 0.3 * 10) / 10;
+      return `年間 約${returnValue}万円相当の返礼品（寄付上限目安 ${limit}万円）`;
     },
     urgency: 'high',
     description: '年収・家族構成に応じた上限額まで寄付でき、返礼品を受け取りながら税金が控除される制度。利用しないと完全に損です。',
@@ -85,8 +87,7 @@ export const ALL_DEDUCTIONS: Deduction[] = [
     id: 'disability_care',
     name: '障害者控除（要介護認定）',
     match: (input: UserInput) =>
-      input.family.includes('care_needed') &&
-      !input.currentDeductions.includes('dependent_deduction'),
+      input.family.includes('care_needed'),
     savings: (input: UserInput) => {
       const income = getIncomeCenter(input);
       const rate = getTaxRate(income);
@@ -107,8 +108,7 @@ export const ALL_DEDUCTIONS: Deduction[] = [
       input.workStyle !== 'freelance' &&
       (input.life.includes('qualification') ||
         input.life.includes('work_books') ||
-        input.life.includes('work_clothes') ||
-        input.life.includes('remote_work')),
+        input.life.includes('work_clothes')),
     savings: () => '数万〜数十万円（支出額・収入による）',
     urgency: 'medium',
     description: '会社員が業務のために自腹で払った費用（資格取得・書籍・スーツ・在宅勤務費用等）を給与所得控除の半額を超えた分だけ控除できる制度。年間1,700人ほどしか使っていない穴場。',
@@ -189,8 +189,7 @@ export const ALL_DEDUCTIONS: Deduction[] = [
     id: 'specific_dependent',
     name: '特定扶養控除',
     match: (input: UserInput) =>
-      input.family.includes('child_19to22') &&
-      !input.currentDeductions.includes('dependent_deduction'),
+      input.family.includes('child_19to22'),
     savings: (input: UserInput) => {
       const income = getIncomeCenter(input);
       const rate = getTaxRate(income);
@@ -208,8 +207,7 @@ export const ALL_DEDUCTIONS: Deduction[] = [
     id: 'single_parent',
     name: 'ひとり親控除',
     match: (input: UserInput) =>
-      input.family.includes('single_parent') &&
-      !input.currentDeductions.includes('dependent_deduction'),
+      input.family.includes('single_parent'),
     savings: (input: UserInput) => {
       const income = getIncomeCenter(input);
       const rate = getTaxRate(income);
@@ -257,6 +255,44 @@ export const ALL_DEDUCTIONS: Deduction[] = [
     action: '証券会社の「年間取引報告書」を取得し確定申告',
     deadline: '翌年3月15日（3年間繰越可能）',
     difficulty: 'ふつう',
+  },
+  {
+    id: 'spouse_deduction',
+    name: '配偶者（特別）控除',
+    match: (input: UserInput) =>
+      input.family.includes('spouse_low') &&
+      !input.currentDeductions.includes('spouse_deduction'),
+    savings: (input: UserInput) => {
+      const income = getIncomeCenter(input);
+      const rate = getTaxRate(income);
+      // 配偶者特別控除38万（2025年改正：収入160万円まで満額）
+      const saving = Math.round(38 * (rate + 0.10) * 10) / 10;
+      return `年間 約${saving}万円（配偶者特別控除38万円）`;
+    },
+    urgency: 'high',
+    description: '配偶者の年収が160万円以下（令和7年度改正で150万→160万に引き上げ）なら、配偶者（特別）控除38万円が適用。申告し忘れているケースが非常に多い控除です。',
+    action: '年末調整の「配偶者控除等申告書」に配偶者の所得見積もりを記入する',
+    deadline: '年末調整（10〜11月）',
+    difficulty: 'かんたん',
+  },
+  {
+    id: 'parent_over70_deduction',
+    name: '老人扶養控除（70歳以上の親）',
+    match: (input: UserInput) =>
+      input.family.includes('parent_over70') &&
+      !input.currentDeductions.includes('dependent_deduction'),
+    savings: (input: UserInput) => {
+      const income = getIncomeCenter(input);
+      const rate = getTaxRate(income);
+      // 同居老親等は58万円（別居老人は48万円）
+      const saving = Math.round(58 * (rate + 0.10) * 10) / 10;
+      return `年間 約${saving}万円（老人扶養控除58万円）`;
+    },
+    urgency: 'high',
+    description: '70歳以上の親と同居している場合、通常の扶養控除38万円ではなく老人扶養控除58万円が適用される。見落としがちで、過去5年分の遡及申告も可能。',
+    action: '年末調整の「扶養控除等申告書」に親を「老人扶養親族（同居老親等）」として記入する',
+    deadline: '年末調整（10〜11月）。5年前まで遡れる',
+    difficulty: 'かんたん',
   },
   {
     id: 'remote_work_expense',
