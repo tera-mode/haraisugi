@@ -10,9 +10,11 @@ export default function Footer() {
           本サービスは一般的な税制情報に基づくシミュレーションであり、個別具体的な税務相談ではありません。
           最終判断は税理士にご相談ください。
         </p>
-        <div className="flex gap-4 text-xs">
-          <Link href="/articles" className="hover:text-blue-700">節税コラム</Link>
-          <span>運営：合同会社LAIV</span>
+        <div className="flex flex-wrap gap-4 text-xs">
+          <Link href="/column" className="hover:text-blue-700">節税コラム</Link>
+          <a href="https://www.laiv.jp/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">運営会社</a>
+          <a href="https://www.laiv.jp/terms" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">利用規約</a>
+          <a href="https://www.laiv.jp/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">プライバシーポリシー</a>
         </div>
         <p className="mt-4 text-xs text-gray-400">
           &copy; {new Date().getFullYear()} 合同会社LAIV. All rights reserved.

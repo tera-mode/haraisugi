@@ -9,7 +9,7 @@ export default function Header() {
           {SITE_NAME}
         </Link>
         <nav className="flex gap-4 text-sm text-gray-600">
-          <Link href="/articles" className="hover:text-blue-700">節税コラム</Link>
+          <Link href="/column" className="hover:text-blue-700">節税コラム</Link>
         </nav>
       </div>
     </header>
