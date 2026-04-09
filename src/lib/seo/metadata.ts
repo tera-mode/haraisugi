@@ -23,6 +23,9 @@ export const siteMetadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: SITE_URL,
+  },
 };
 
 export function buildArticleMetadata(article: {

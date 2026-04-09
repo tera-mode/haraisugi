@@ -7,6 +7,9 @@ import { SITE_NAME } from '@/lib/constants';
 export const metadata: Metadata = {
   title: `節税コラム | ${SITE_NAME}`,
   description: '医療費控除・ふるさと納税・iDeCoなど、サラリーマンの節税に役立つコラムをまとめています。',
+  alternates: {
+    canonical: 'https://haraisugi.jp/articles',
+  },
 };
 
 type Article = {
