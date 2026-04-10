@@ -35,9 +35,9 @@ function buildCTAs(result: DiagnosisResult, input: UserInput): CTAItem[] {
 
   if (deductionIds.includes('ideco')) {
     ctas.push({
-      key: 'ideco_rakuten',
+      key: 'ideco_matsui',
       heading: 'iDeCoで毎年数万円を節税',
-      desc: '楽天証券のiDeCoは手数料が低く、豊富な商品ラインナップ。今すぐ開設できます。',
+      desc: '松井証券のiDeCoは運営管理手数料0円。業界最多水準の商品ラインナップで、創業100年の安心感。今すぐ開設できます。',
     });
   }
 
