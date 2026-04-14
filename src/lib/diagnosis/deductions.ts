@@ -307,4 +307,21 @@ export const ALL_DEDUCTIONS: Deduction[] = [
     deadline: '翌年3月15日（確定申告）',
     difficulty: 'やや手間',
   },
+  {
+    id: 'angel_tax_deduction',
+    name: 'エンジェル税制（優遇措置A）',
+    match: (input: UserInput) =>
+      input.life.includes('angel_investment'),
+    savings: (input: UserInput) => {
+      const income = getIncomeCenter(input);
+      const rate = getTaxRate(income);
+      const saving = Math.round(100 * (rate + 0.10) * 10) / 10;
+      return `投資額に応じて 年間 数万〜${saving}万円以上の節税（投資額−2,000円を所得控除）`;
+    },
+    urgency: 'medium',
+    description: 'エンジェル税制の優遇措置Aでは、対象スタートアップへの投資額−2,000円をその年の総所得金額から控除できます。控除上限は800万円と総所得×40%の低い方。令和7年度改正で再投資期間が翌年末まで延長されました。FUNDINNOなどのクラウドファンディング経由でも利用可能です。',
+    action: 'エンジェル税制対象のスタートアップに投資し、確定申告で優遇措置Aまたは優遇措置Bを選択して申告する',
+    deadline: '投資は年内（令和7年改正後は翌年末まで可）。確定申告は翌年3月15日',
+    difficulty: 'やや手間',
+  },
 ];

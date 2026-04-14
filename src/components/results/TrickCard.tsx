@@ -12,7 +12,13 @@ export default function TrickCard({ trick }: Props) {
         <span className="text-yellow-500 text-sm shrink-0">{trick.surprise}</span>
       </div>
       <p className="text-sm text-gray-600 leading-relaxed mb-2">{trick.body}</p>
-      <p className="text-xs text-gray-400">出典：{trick.source}</p>
+      <p className="text-xs text-gray-400">
+        出典：{trick.sourceUrl ? (
+          <a href={trick.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">
+            {trick.source}
+          </a>
+        ) : trick.source}
+      </p>
     </div>
   );
 }

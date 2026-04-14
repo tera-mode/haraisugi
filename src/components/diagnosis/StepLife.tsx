@@ -19,6 +19,8 @@ const CATEGORIES: Category[] = [
       { value: 'dental_orthodontics', label: '歯科矯正をした' },
       { value: 'dental_loan', label: 'デンタルローンを使用' },
       { value: 'commute_to_hospital', label: '通院交通費がある' },
+      { value: 'implant_lasik', label: 'インプラント・レーシックを受けた' },
+      { value: 'infertility_treatment', label: '不妊治療をしている（した）' },
     ],
   },
   {
@@ -67,6 +69,8 @@ const CATEGORIES: Category[] = [
     options: [
       { value: 'stock_loss', label: '株・投信で損失が出た' },
       { value: 'crypto', label: '暗号資産の取引をした' },
+      { value: 'angel_investment', label: 'スタートアップに出資した' },
+      { value: 'stock_dividend', label: '上場株式の配当収入がある' },
     ],
   },
 ];

@@ -48,7 +48,13 @@ export type LifeOption =
   | 'remote_work'          // 在宅勤務
   // 投資
   | 'stock_loss'           // 株損失
-  | 'crypto';              // 暗号資産
+  | 'crypto'               // 暗号資産
+  // 投資（追加）
+  | 'angel_investment'     // エンジェル投資（スタートアップ出資）
+  | 'stock_dividend'       // 上場株式の配当収入あり
+  // 医療（追加）
+  | 'implant_lasik'        // インプラント・レーシック
+  | 'infertility_treatment'; // 不妊治療
 
 export type CurrentDeduction =
   | 'furusato'
@@ -91,6 +97,7 @@ export type Trick = {
   match: (input: UserInput) => boolean;
   body: string;
   source: string;
+  sourceUrl?: string;
   surprise: '★★★' | '★★☆' | '★☆☆';
 };
 

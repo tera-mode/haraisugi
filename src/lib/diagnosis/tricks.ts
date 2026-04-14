@@ -1,5 +1,7 @@
 import type { Trick, UserInput } from './types';
 
+const NTA = 'https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku';
+
 export const ALL_TRICKS: Trick[] = [
   {
     id: 'hospital_transport',
@@ -10,6 +12,7 @@ export const ALL_TRICKS: Trick[] = [
       input.life.includes('commute_to_hospital'),
     body: '電車・バスの通院交通費は領収書がなくてもOK。日付・経路・金額をメモしておくだけで医療費控除に含められます。タクシーは「歩行困難」など医療上の理由がある場合のみ対象。自家用車のガソリン代は対象外。',
     source: '国税庁タックスアンサー No.1122',
+    sourceUrl: `${NTA}/1122.htm`,
     surprise: '★★★',
   },
   {
@@ -22,6 +25,7 @@ export const ALL_TRICKS: Trick[] = [
       input.family.includes('child_16to18'),
     body: '子どもの歯科矯正（機能回復目的）は医療費控除の対象。審美目的の大人の矯正は原則対象外ですが、噛み合わせや発音の改善目的なら認められるケースも。歯科医の診断書があると確実。',
     source: '国税庁タックスアンサー No.1128',
+    sourceUrl: `${NTA}/1128.htm`,
     surprise: '★★☆',
   },
   {
@@ -31,6 +35,7 @@ export const ALL_TRICKS: Trick[] = [
     match: (input: UserInput) => input.life.includes('dental_loan'),
     body: 'デンタルローンを使った歯科治療費は、ローンを組んだ年（治療費を支払った年）に全額を医療費控除に計上できます。実際の返済年には計上できないため、ローン契約年の確定申告が重要。',
     source: '国税庁タックスアンサー No.1127',
+    sourceUrl: `${NTA}/1127.htm`,
     surprise: '★★★',
   },
   {
@@ -42,6 +47,7 @@ export const ALL_TRICKS: Trick[] = [
       (input.life.includes('medical_over100k') || input.life.includes('commute_to_hospital')),
     body: '子どもが一人で通院できない年齢の場合、付き添う親の交通費も医療費控除に含められます。子どもの分と合わせてメモを残しておきましょう。',
     source: '国税庁タックスアンサー No.1122',
+    sourceUrl: `${NTA}/1122.htm`,
     surprise: '★★★',
   },
   {
@@ -53,6 +59,7 @@ export const ALL_TRICKS: Trick[] = [
       (input.family.includes('spouse_low') || input.family.includes('child_under16')),
     body: '生計を一にする家族の医療費は合算できます。所得税率が高い人（一番稼いでいる人）が申告すると、控除額は同じでも還付額が大きくなります。',
     source: '国税庁タックスアンサー No.1120',
+    sourceUrl: `${NTA}/1120.htm`,
     surprise: '★★☆',
   },
   {
@@ -62,6 +69,7 @@ export const ALL_TRICKS: Trick[] = [
     match: (input: UserInput) => input.family.includes('child_away'),
     body: '大学等で別居している子どもへの生活費仕送りをしている場合、「生計を一にする」とみなされます。その子どもの医療費も親の確定申告に合算できます。',
     source: '国税庁タックスアンサー No.1120',
+    sourceUrl: `${NTA}/1120.htm`,
     surprise: '★★★',
   },
   {
@@ -73,6 +81,7 @@ export const ALL_TRICKS: Trick[] = [
       (input.family.includes('spouse_low') || input.family.includes('spouse_high')),
     body: '複数の子どもがいる場合、全員を一方の扶養にするより夫婦で分散させた方が、住民税の非課税限度額や社会保険の扶養判定に有利なケースがあります。特に夫婦の収入差が小さい場合に要検討。',
     source: '国税庁タックスアンサー No.1191',
+    sourceUrl: `${NTA}/1191.htm`,
     surprise: '★★☆',
   },
   {
@@ -84,6 +93,7 @@ export const ALL_TRICKS: Trick[] = [
       input.currentDeductions.includes('furusato'),
     body: 'iDeCoや医療費控除を使うと課税所得が下がり、ふるさと納税の控除上限額も連動して下がります。ふるさと納税の上限計算には「控除後の所得」が使われるため、iDeCo加入後や医療費控除申告後に上限を再計算しましょう。',
     source: '総務省ふるさと納税ポータル',
+    sourceUrl: 'https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/furusato/mechanism/deduction.html',
     surprise: '★★★',
   },
   {
@@ -95,6 +105,7 @@ export const ALL_TRICKS: Trick[] = [
       input.currentDeductions.includes('furusato'),
     body: 'ふるさと納税でワンストップ特例を使っていても、医療費控除のために確定申告をすると、ワンストップ特例は無効になります。その場合はふるさと納税も確定申告で申請し直す必要があります。',
     source: '総務省ふるさと納税ポータル',
+    sourceUrl: 'https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/furusato/mechanism/deduction.html',
     surprise: '★★★',
   },
   {
@@ -105,6 +116,7 @@ export const ALL_TRICKS: Trick[] = [
       input.workStyle !== 'freelance' && input.life.includes('work_books'),
     body: '業務上必要な書籍・専門誌・新聞の購入費も特定支出控除の対象です（勤務必要経費として年65万円まで）。会社の証明書が必要ですが、自腹で書籍を多く買っている人は要確認。',
     source: '国税庁タックスアンサー No.1415',
+    sourceUrl: `${NTA}/1415.htm`,
     surprise: '★★★',
   },
   {
@@ -115,6 +127,7 @@ export const ALL_TRICKS: Trick[] = [
       input.workStyle !== 'freelance' && input.life.includes('work_clothes'),
     body: '職務上着用が必要なスーツや制服を自費で購入した場合、特定支出控除の「勤務必要経費」に含められます（年65万円まで）。私服と明確に区別できるものが対象で、会社の証明が必要。',
     source: '国税庁タックスアンサー No.1415',
+    sourceUrl: `${NTA}/1415.htm`,
     surprise: '★★☆',
   },
   {
@@ -125,6 +138,7 @@ export const ALL_TRICKS: Trick[] = [
       input.workStyle !== 'freelance' && input.life.includes('remote_work'),
     body: '在宅勤務で業務に使った通信費・電気代の業務使用割合分を特定支出控除に含められます。総務省の計算式（通信費：業務日数/30×1/2）に従って按分し、会社の証明書を取得して申告します。',
     source: '国税庁タックスアンサー No.1415',
+    sourceUrl: `${NTA}/1415.htm`,
     surprise: '★★☆',
   },
   {
@@ -134,6 +148,7 @@ export const ALL_TRICKS: Trick[] = [
     match: () => true, // 全員対象
     body: '確定申告で還付を受ける場合（医療費控除・住宅ローン控除の初年度など）、申告書の提出期限（3月15日）を過ぎても5年間は申告可能です。過去に申告し忘れた分も今から取り戻せます。',
     source: '国税庁タックスアンサー No.2030',
+    sourceUrl: `${NTA}/2030.htm`,
     surprise: '★★★',
   },
   {
@@ -144,6 +159,7 @@ export const ALL_TRICKS: Trick[] = [
       input.life.includes('medical_over100k') || input.life.includes('dental_orthodontics'),
     body: '翌年1月払いの治療費を12月中に前払いすると、今年の医療費控除に含められます。逆に今年の医療費がわずかに10万円を下回る場合、翌年1月に繰り越すことで両年分を合算して10万円を超えさせることはできません。同一年の合計で判定されます。',
     source: '国税庁タックスアンサー No.1120',
+    sourceUrl: `${NTA}/1120.htm`,
     surprise: '★★☆',
   },
   {
@@ -153,6 +169,7 @@ export const ALL_TRICKS: Trick[] = [
     match: (input: UserInput) => input.life.includes('stock_loss'),
     body: '源泉徴収ありの特定口座でも、①損失があって他の口座の利益と通算したい場合、②配当控除を受けたい場合、③株式の損失を翌年以降に繰り越したい場合は確定申告をすると得になります。',
     source: '国税庁タックスアンサー No.1463',
+    sourceUrl: `${NTA}/1463.htm`,
     surprise: '★★☆',
   },
   {
@@ -163,6 +180,7 @@ export const ALL_TRICKS: Trick[] = [
       input.workStyle === 'freelance' || input.workStyle === 'employee_side',
     body: '青色申告特別控除65万円を受けるには、e-Taxでの電子申告または電子帳簿保存が必要です。紙で申告すると55万円控除になります。マイナンバーカードを使ったe-Tax申告で10万円の差。',
     source: '国税庁タックスアンサー No.2072',
+    sourceUrl: `${NTA}/2072.htm`,
     surprise: '★★★',
   },
   {
@@ -174,6 +192,7 @@ export const ALL_TRICKS: Trick[] = [
       (input.family.includes('spouse_low') || input.family.includes('spouse_high')),
     body: '青色申告者は、事業に従事する家族への給与を全額経費にできます（青色事業専従者給与）。配偶者や子どもに適正な給与を払うことで、家族全体の税負担を下げられます。',
     source: '国税庁タックスアンサー No.2075',
+    sourceUrl: `${NTA}/2075.htm`,
     surprise: '★★☆',
   },
   {
@@ -184,6 +203,7 @@ export const ALL_TRICKS: Trick[] = [
       input.workStyle === 'freelance' || input.workStyle === 'executive',
     body: '青色申告の中小事業者は、取得価額30万円未満の備品（PC・カメラ・家具等）を購入年に全額経費として計上できます（少額減価償却資産の特例）。年間300万円まで。',
     source: '国税庁タックスアンサー No.5408',
+    sourceUrl: 'https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5408.htm',
     surprise: '★★☆',
   },
   {
@@ -194,6 +214,7 @@ export const ALL_TRICKS: Trick[] = [
       input.family.includes('child_19to22') || input.family.includes('child_away'),
     body: '20歳以上の学生の子の国民年金保険料（2025年度は年約21万円）を親が支払うと、全額が親の社会保険料控除になります。所得税率20%＋住民税10%なら約6.3万円の節税効果。口座振替やクレジットカードは必ず親名義にすることがポイント。',
     source: '国税庁タックスアンサー No.1130',
+    sourceUrl: `${NTA}/1130.htm`,
     surprise: '★★★',
   },
   {
@@ -204,6 +225,7 @@ export const ALL_TRICKS: Trick[] = [
       input.family.includes('parent_over70') || input.family.includes('care_needed'),
     body: '親の後期高齢者医療保険料が年金天引き（特別徴収）のままだと、年金受給者である親の控除になります。口座振替に変更して自分の口座から支払えば、所得税率の高い自分の社会保険料控除として申告できます。市区町村窓口で変更手続きが必要。',
     source: '国税庁タックスアンサー No.1130',
+    sourceUrl: `${NTA}/1130.htm`,
     surprise: '★★★',
   },
   {
@@ -213,6 +235,7 @@ export const ALL_TRICKS: Trick[] = [
     match: (input: UserInput) => input.family.includes('child_under16'),
     body: '16歳未満の子は所得税の扶養控除対象外ですが、住民税の非課税限度額の判定には扶養親族としてカウントされます。限度額は「35万円×（本人＋扶養人数）＋21万円＋10万円」で計算され、年収の低い親が申告書に記載するだけで住民税が全額非課税になるケースがあります。',
     source: '地方税法第295条',
+    sourceUrl: 'https://laws.e-gov.go.jp/law/325AC0000000026#Mp-At_295',
     surprise: '★★★',
   },
   {
@@ -222,6 +245,7 @@ export const ALL_TRICKS: Trick[] = [
     match: (input: UserInput) => input.currentDeductions.includes('ideco'),
     body: '退職所得控除の範囲内を一時金で受け取り、残りを60〜64歳の間に年金形式（年60万円以下）で受け取ると、公的年金等控除（65歳未満は年60万円）を活用して最大300万円まで非課税で受け取れます。退職金が多い人は年金形式で分散、少ない人は一時金優先が基本戦略です。',
     source: '国税庁タックスアンサー No.1420・No.1600',
+    sourceUrl: `${NTA}/1420.htm`,
     surprise: '★★★',
   },
   {
@@ -231,6 +255,7 @@ export const ALL_TRICKS: Trick[] = [
     match: (input: UserInput) => input.workStyle === 'employee_side',
     body: '副業が事業所得として認められ赤字になった場合、給与所得と損益通算して税金の還付を受けられる可能性があります。ただし、事業性の認定が厳しくなっており、継続的な事業活動の実態が必要。雑所得とみなされると損益通算不可。',
     source: '国税庁タックスアンサー No.1350',
+    sourceUrl: `${NTA}/1350.htm`,
     surprise: '★★★',
   },
   {
@@ -240,6 +265,113 @@ export const ALL_TRICKS: Trick[] = [
     match: (input: UserInput) => input.life.includes('life_insurance'),
     body: '生命保険料控除には「一般生命保険料」「介護医療保険料」「個人年金保険料」の3枠があり、それぞれ最大4万円（所得税）、合計12万円まで控除可能。3枠を埋め切ることで最大限の節税効果を得られます。',
     source: '国税庁タックスアンサー No.1140',
+    sourceUrl: `${NTA}/1140.htm`,
     surprise: '★★☆',
+  },
+  {
+    id: 'angel_tax',
+    category: '投資',
+    title: 'エンジェル税制でスタートアップ投資額を総所得から控除',
+    match: (input: UserInput) => input.life.includes('angel_investment'),
+    body: 'エンジェル税制の優遇措置Aを使うと、対象スタートアップへの投資額−2,000円をその年の総所得金額から控除できます（上限は800万円と総所得×40%の低い方）。令和7年度改正で再投資期間が翌年末まで延長され、FUNDINNOなどのクラウドファンディング経由でも利用可能。確定申告が必要です。',
+    source: '国税庁タックスアンサー No.1544',
+    sourceUrl: `${NTA}/1544.htm`,
+    surprise: '★★★',
+  },
+  {
+    id: 'specific_relative_special',
+    category: '家族最適化',
+    title: '19〜22歳の子のバイト年収150万円まで親の63万円控除が維持される',
+    match: (input: UserInput) => input.family.includes('child_19to22'),
+    body: '令和7年度改正で「特定親族特別控除」が新設。19〜22歳の子（特定扶養親族）の年収上限が103万円→150万円に拡大され、150万円までなら親は従来通り63万円の控除を受けられます。150万〜188万円でも段階的に控除が残ります。年末調整で「特定親族特別控除申告書」の提出が必要。',
+    source: '令和7年度税制改正・国税庁',
+    sourceUrl: 'https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1180.htm',
+    surprise: '★★★',
+  },
+  {
+    id: 'dividend_tax_credit',
+    category: '投資',
+    title: '配当金は総合課税で申告すると税率が下がるケースがある',
+    match: (input: UserInput) =>
+      input.life.includes('stock_dividend') &&
+      ['under300', '300to500', '500to700'].includes(input.income),
+    body: '上場株式の配当は通常20.315%の源泉徴収ですが、課税所得695万円以下なら総合課税で申告して配当控除（税額の10%）を受ける方が有利になるケースがあります。所得税率5〜20%の人は検討の価値あり。ただし国民健康保険料に影響する場合があるので要確認。',
+    source: '国税庁タックスアンサー No.1250',
+    sourceUrl: `${NTA}/1250.htm`,
+    surprise: '★★☆',
+  },
+  {
+    id: 'implant_lasik_deduction',
+    category: '医療費',
+    title: 'インプラント・レーシックは医療費控除の対象',
+    match: (input: UserInput) => input.life.includes('implant_lasik'),
+    body: 'インプラント（1本30〜50万円）やレーシック（両眼20〜50万円）は治療目的のため医療費控除の対象です。高額なので1回で10万円超を超えやすく、手術を受けた年に確定申告すれば数万〜十数万円の還付が期待できます。分割払いの場合は契約年に全額計上可能。',
+    source: '国税庁タックスアンサー No.1128',
+    sourceUrl: `${NTA}/1128.htm`,
+    surprise: '★★★',
+  },
+  {
+    id: 'infertility_treatment',
+    category: '医療費',
+    title: '不妊治療の自己負担分は医療費控除の対象',
+    match: (input: UserInput) => input.life.includes('infertility_treatment'),
+    body: '2022年の保険適用拡大後も、保険適用外の治療や自己負担部分は医療費控除に含められます。体外受精・顕微授精など高額になりやすく、助成金を差し引いた自己負担額が10万円を超えれば控除対象。夫婦で所得税率の高い方が申告すると還付額が大きくなります。',
+    source: '国税庁タックスアンサー No.1122',
+    sourceUrl: `${NTA}/1122.htm`,
+    surprise: '★★☆',
+  },
+  {
+    id: 'rental_earthquake_insurance',
+    category: '保険最適化',
+    title: '賃貸住宅でも家財の地震保険料控除が使える',
+    match: (input: UserInput) => input.life.includes('earthquake_insurance'),
+    body: '「持ち家じゃないから関係ない」と思いがちですが、賃貸でも家財を対象とした地震保険に加入していれば控除対象（最大5万円）。火災保険の特約として自動付帯している場合もあるので、保険証券を確認してみましょう。',
+    source: '国税庁タックスアンサー No.1145',
+    sourceUrl: `${NTA}/1145.htm`,
+    surprise: '★★☆',
+  },
+  {
+    id: 'furusato_ichijishotoku',
+    category: '制度の相互影響',
+    title: 'ふるさと納税の返礼品が年50万円超で課税される',
+    match: (input: UserInput) =>
+      input.currentDeductions.includes('furusato') &&
+      ['1000to1500', 'over1500'].includes(input.income),
+    body: 'ふるさと納税の返礼品は一時所得に該当します。他の一時所得（保険の満期金等）と合算して年間50万円（特別控除額）を超えると課税対象に。寄付上限が高い高所得者は返礼品の合計額に注意が必要です。',
+    source: '国税庁タックスアンサー No.1490',
+    sourceUrl: `${NTA}/1490.htm`,
+    surprise: '★★★',
+  },
+  {
+    id: 'crypto_loss_harvest',
+    category: '投資',
+    title: '暗号資産の「損出し」で雑所得を圧縮できる',
+    match: (input: UserInput) => input.life.includes('crypto'),
+    body: '含み損のある暗号資産を年末に一旦売却して損失を確定させ、すぐ買い戻す「損出し」テクニック。暗号資産の利益は雑所得として最大55%課税されるため、同じ雑所得内で損益通算することで税額を大幅に圧縮できます。取引記録は必ず保存しておくこと。',
+    source: '国税庁「暗号資産に関する税務上の取扱いについて」',
+    sourceUrl: 'https://www.nta.go.jp/publication/pamph/pdf/virtual_currency_faq_03.pdf',
+    surprise: '★★★',
+  },
+  {
+    id: 'side_job_home_expense',
+    category: 'フリーランス',
+    title: '副業で自宅家賃・通信費の一部を経費にできる',
+    match: (input: UserInput) => input.workStyle === 'employee_side',
+    body: '副業を事業所得として申告する場合、自宅の家賃・光熱費・通信費を業務使用割合で按分して経費計上できます。例えば自宅の20%を作業スペースとして使っているなら、家賃の20%が経費に。按分根拠（面積比・時間比）を記録しておくことがポイント。雑所得の場合は経費計上に制限があるため注意。',
+    source: '国税庁タックスアンサー No.2210',
+    sourceUrl: `${NTA}/2210.htm`,
+    surprise: '★★☆',
+  },
+  {
+    id: 'housing_loan_prepay_timing',
+    category: 'タイミング',
+    title: '住宅ローンの繰り上げ返済は1月以降にすると控除額を維持できる',
+    match: (input: UserInput) =>
+      input.life.includes('housing_loan') ||
+      input.currentDeductions.includes('housing_loan_deduction'),
+    body: '住宅ローン控除は「12月31日時点の年末残高×0.7%」で計算されます。12月中に繰り上げ返済すると年末残高が減り、控除額が下がります。同じ金額を繰り上げ返済するなら、1月に回すだけで今年の控除額を維持でき、数千〜数万円の差が出ることがあります。',
+    source: '国税庁タックスアンサー No.1213',
+    sourceUrl: `${NTA}/1213.htm`,
+    surprise: '★★★',
   },
 ];
