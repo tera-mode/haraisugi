@@ -14,6 +14,7 @@ type CTAItem = {
   key: string;
   heading: string;
   desc: string;
+  free: boolean;
 };
 
 function buildCTAs(result: DiagnosisResult, input: UserInput): CTAItem[] {
@@ -22,14 +23,10 @@ function buildCTAs(result: DiagnosisResult, input: UserInput): CTAItem[] {
 
   if (deductionIds.includes('furusato')) {
     ctas.push({
-      key: 'furusato_satofuru',
-      heading: 'まずはふるさと納税から始めよう',
-      desc: 'さとふるで上限額を無料シミュレーション。返礼品を受け取りながら節税できます。',
-    });
-    ctas.push({
       key: 'furusona',
       heading: 'ふるさと納税AIで最適な返礼品を探す',
       desc: '姉妹サービス furusona が、あなたにぴったりの返礼品をAIで提案します。',
+      free: true,
     });
   }
 
@@ -38,6 +35,7 @@ function buildCTAs(result: DiagnosisResult, input: UserInput): CTAItem[] {
       key: 'ideco_matsui',
       heading: 'iDeCoで毎年数万円を節税',
       desc: '松井証券のiDeCoは運営管理手数料0円。業界最多水準の商品ラインナップで、創業100年の安心感。今すぐ開設できます。',
+      free: true,
     });
   }
 
@@ -46,6 +44,7 @@ function buildCTAs(result: DiagnosisResult, input: UserInput): CTAItem[] {
       key: 'insurance_review',
       heading: '保険の見直しで節税＋保障を最適化',
       desc: '保険見直しラボで無料相談。生命保険料控除の枠を最大限活用できます。',
+      free: true,
     });
   }
 
@@ -57,6 +56,7 @@ function buildCTAs(result: DiagnosisResult, input: UserInput): CTAItem[] {
       key: 'tax_accountant_dot',
       heading: '複雑な控除は税理士に相談',
       desc: '税理士ドットコムで無料相談。特定支出控除や損益通算は専門家に任せると確実です。',
+      free: true,
     });
   }
 
@@ -65,6 +65,7 @@ function buildCTAs(result: DiagnosisResult, input: UserInput): CTAItem[] {
       key: 'accounting_freee',
       heading: '青色申告はfreeeで楽に完結',
       desc: 'freeeなら確定申告・青色申告65万円控除もかんたんに。e-Tax連携で最大控除額を実現。',
+      free: false,
     });
   }
 
@@ -81,8 +82,9 @@ export default function CTASection({ result, input }: Props) {
   };
 
   return (
-    <div className="mt-8">
-      <h3 className="text-lg font-bold text-gray-800 mb-4">次のアクション</h3>
+    <div className="mt-8 mb-10 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-5">
+      <p className="text-xs font-semibold text-blue-500 uppercase tracking-widest mb-1">Next Action</p>
+      <h3 className="text-base font-bold text-gray-900 mb-4">節税を実現するために、今すぐできること</h3>
       <div className="flex flex-col gap-3">
         {ctas.map(cta => {
           const link = AFFILIATE_LINKS[cta.key];
@@ -94,11 +96,15 @@ export default function CTASection({ result, input }: Props) {
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               onClick={() => handleClick(cta.key)}
-              className="block border border-blue-200 rounded-xl px-4 py-4 hover:bg-blue-50 transition-colors"
+              className="flex items-center justify-between gap-3 bg-white border border-blue-100 rounded-xl px-4 py-4 hover:border-blue-400 hover:shadow-md transition-all"
             >
-              <p className="font-semibold text-blue-700 mb-1 text-sm">{cta.heading}</p>
-              <p className="text-xs text-gray-600 leading-relaxed">{cta.desc}</p>
-              <p className="text-xs text-blue-500 mt-1">→ {link.label}</p>
+              <div className="min-w-0">
+                <p className="font-bold text-gray-900 text-sm mb-0.5">{cta.heading}</p>
+                <p className="text-xs text-gray-500 leading-relaxed">{cta.desc}</p>
+              </div>
+              <span className="shrink-0 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-3 py-2 rounded-lg whitespace-nowrap">
+                {cta.free ? '無料で試す →' : '詳しく見る →'}
+              </span>
             </a>
           );
         })}

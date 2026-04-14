@@ -68,6 +68,8 @@ function ResultContent() {
         )}
       </div>
 
+      <CTASection result={result} input={input} />
+
       {/* 裏技 */}
       {result.tricks.length > 0 && (
         <>
@@ -88,8 +90,6 @@ function ResultContent() {
           </div>
         </>
       )}
-
-      <CTASection result={result} input={input} />
 
       <div className="mt-8">
         <Disclaimer />

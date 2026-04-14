@@ -7,21 +7,6 @@ export type AffiliateLink = {
 };
 
 export const AFFILIATE_LINKS: Record<string, AffiliateLink> = {
-  furusato_satofuru: {
-    key: 'furusato_satofuru',
-    label: 'さとふるでふるさと納税をする',
-    url: 'https://www.satofull.jp/',
-    cvCondition: '初回寄付完了',
-    estimatedReward: '寄付額の1〜4%',
-  },
-  // A8.net アフィリエイトリンク（楽天アフィリエイト / insId: s00000011623001）
-  furusato_rakuten: {
-    key: 'furusato_rakuten',
-    label: '楽天ふるさと納税で上限を確認',
-    url: 'https://rpx.a8.net/svt/ejp?a8mat=4B1H1O+2SMA0I+2HOM+BW8O1&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0ea62065.34400275.0ea62066.204f04c0%2Fa26040900393_4B1H1O_2SMA0I_2HOM_BW8O1%3Fpc%3Dhttps%253A%252F%252Fevent.rakuten.co.jp%252Ffurusato%252F%26m%3Dhttps%253A%252F%252Fevent.rakuten.co.jp%252Ffurusato%252F',
-    cvCondition: '寄付完了',
-    estimatedReward: '寄付額に応じた報酬',
-  },
   // A8.net アフィリエイトリンク（松井証券 iDeCo / insId: s00000018318002 / 確定率87.5%）
   ideco_matsui: {
     key: 'ideco_matsui',
