@@ -20,6 +20,29 @@ export function getWebApplicationLD() {
   };
 }
 
+export function getNicheDiagnosisLD(params: {
+  name: string;
+  description: string;
+  path: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: params.name,
+    url: `${SITE_URL}${params.path}`,
+    description: params.description,
+    applicationCategory: 'FinanceApplication',
+    operatingSystem: 'Any',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'JPY',
+    },
+    image: OGP_IMAGE,
+    inLanguage: 'ja',
+  };
+}
+
 export function getArticleLD(article: {
   title: string;
   description: string;

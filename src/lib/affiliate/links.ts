@@ -66,4 +66,28 @@ export const AFFILIATE_LINKS: Record<string, AffiliateLink> = {
     cvCondition: '相互送客',
     estimatedReward: '相互送客',
   },
+  // 不動産一括査定（ASP承認後URLを差し替え）
+  realestate_query: {
+    key: 'realestate_query',
+    label: '不動産一括査定で売却価格を確認する',
+    url: 'https://www.ieul.jp/',
+    cvCondition: '査定申込完了',
+    estimatedReward: '1,000〜5,000円/件',
+  },
+  // 相続税理士紹介（ASP承認後URLを差し替え）
+  inheritance_tax: {
+    key: 'inheritance_tax',
+    label: '相続専門の税理士を探す（無料相談）',
+    url: 'https://www.zeiri4.com/',
+    cvCondition: '問い合わせ完了',
+    estimatedReward: '3,000〜15,000円/件',
+  },
+  // iDeCo（退職金診断用）
+  ideco_rakuten: {
+    key: 'ideco_rakuten',
+    label: '楽天証券でiDeCoを始める',
+    url: 'https://www.rakuten-sec.co.jp/web/ideco/',
+    cvCondition: '口座開設申込完了',
+    estimatedReward: '数百〜数千円/件',
+  },
 };

@@ -9,6 +9,7 @@ import DeductionCard from '@/components/results/DeductionCard';
 import TrickCard from '@/components/results/TrickCard';
 import CTASection from '@/components/results/CTASection';
 import Disclaimer from '@/components/common/Disclaimer';
+import CrossLinkBanner from '@/components/common/CrossLinkBanner';
 
 function ResultContent() {
   const router = useRouter();
@@ -90,6 +91,19 @@ function ResultContent() {
           </div>
         </>
       )}
+
+      {/* ニッチ診断への回遊 */}
+      <div className="mt-10">
+        <CrossLinkBanner
+          heading="より詳しく診断したい方へ"
+          links={[
+            { href: '/medical-check', icon: '💊', label: '医療費控除 vs セルフメディケーション判定', available: true },
+            { href: '/tomobataraki', icon: '👨‍👩‍👧', label: '共働き世帯の扶養・控除 最適配分診断', available: true },
+            { href: '/furusato-limit', icon: '🎁', label: 'ふるさと納税 上限額シミュレーション', available: true },
+            { href: '/tools', icon: '🛠️', label: '全7つの節税診断メニューを見る', available: true },
+          ]}
+        />
+      </div>
 
       <div className="mt-8">
         <Disclaimer />

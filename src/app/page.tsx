@@ -87,6 +87,19 @@ export default function HomePage() {
             節税コラム一覧を見る →
           </Link>
         </div>
+
+        <div className="border-t border-gray-100 pt-8">
+          <h2 className="text-base font-bold text-gray-900 mb-3">ニッチ節税診断ツール</h2>
+          <p className="text-gray-600 mb-4">
+            医療費控除・共働き控除・副業申告・相続税・ふるさと納税など、テーマ別の詳細シミュレーションツールを提供しています。
+          </p>
+          <Link
+            href="/tools"
+            className="inline-block text-blue-600 font-semibold hover:underline"
+          >
+            節税診断メニューを見る →
+          </Link>
+        </div>
       </section>
     </div>
   );
