@@ -19,6 +19,10 @@ export const siteMetadata: Metadata = {
     card: 'summary_large_image',
     images: [OGP_IMAGE],
   },
+  icons: {
+    icon: '/image/haraisugi_fav.png',
+    apple: '/image/haraisugi_logo_symbol.png',
+  },
   robots: {
     index: true,
     follow: true,
