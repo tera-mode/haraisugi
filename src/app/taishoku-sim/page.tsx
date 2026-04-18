@@ -1,23 +1,14 @@
-import type { Metadata } from 'next';
-import { SITE_URL } from '@/lib/constants';
+import { buildPageMetadata } from '@/lib/seo/metadata';
 import { getNicheDiagnosisLD } from '@/lib/seo/structured-data';
+import NicheDiagnosisPageShell from '@/components/diagnosis/shared/NicheDiagnosisPageShell';
 import TaishokuForm from '@/components/diagnosis/taishoku-sim/TaishokuForm';
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: '退職金とiDeCo、一括？年金？あなたの最適な受取方法を診断',
   description:
     '勤続年数・退職金額・iDeCo残高を入力して、一時金・年金・時間差受取の3パターンの税額を自動比較。5年ルール・19年ルールも解説。',
-  alternates: {
-    canonical: `${SITE_URL}/taishoku-sim`,
-  },
-  openGraph: {
-    title: '退職金とiDeCo、一括？年金？あなたの最適な受取方法を診断',
-    description:
-      '勤続年数・退職金額・iDeCo残高を入力して、一時金・年金・時間差受取の3パターンの税額を自動比較。5年ルール・19年ルールも解説。',
-    url: `${SITE_URL}/taishoku-sim`,
-    type: 'website',
-  },
-};
+  path: '/taishoku-sim',
+});
 
 export default function TaishokuSimPage() {
   const ld = getNicheDiagnosisLD({
@@ -27,16 +18,10 @@ export default function TaishokuSimPage() {
   });
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
-      />
-      <div className="max-w-lg mx-auto px-4 py-8">
-        <TaishokuForm />
-
-        {/* SEO静的コンテンツ */}
-        <section className="mt-16 space-y-10 text-sm text-gray-700">
+    <NicheDiagnosisPageShell
+      ld={ld}
+      seoContent={
+        <>
           <div>
             <h2 className="text-base font-bold text-gray-900 mb-3">退職金の税金は「退職所得控除」で大幅に軽減できる</h2>
             <p className="leading-relaxed">
@@ -73,8 +58,10 @@ export default function TaishokuSimPage() {
               <li>障害者として退職する場合は控除額に100万円が加算される</li>
             </ul>
           </div>
-        </section>
-      </div>
-    </>
+        </>
+      }
+    >
+      <TaishokuForm />
+    </NicheDiagnosisPageShell>
   );
 }

@@ -1,6 +1,30 @@
 import type { Metadata } from 'next';
 import { SITE_URL, SITE_NAME, OGP_IMAGE } from '@/lib/constants';
 
+/**
+ * ページ共通のメタデータ生成ヘルパー
+ * path は '/column' や '/medical-check' のように / 始まりで渡す
+ */
+export function buildPageMetadata(params: {
+  title: string;
+  description: string;
+  path: string;
+}): Metadata {
+  const url = `${SITE_URL}${params.path}`;
+  return {
+    title: params.title,
+    description: params.description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: params.title,
+      description: params.description,
+      url,
+      type: 'website',
+      images: [{ url: OGP_IMAGE, width: 1200, height: 630 }],
+    },
+  };
+}
+
 export const siteMetadata: Metadata = {
   title: {
     default: '税金払いすぎ診断 — あなたの取りこぼし控除を3分で発見【無料】',

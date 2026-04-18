@@ -125,8 +125,8 @@ export default function FukugyouForm() {
                   onClick={() => setMainJobIncome(opt.value)}
                   className={`py-2 px-2 rounded-lg border text-xs font-medium transition-colors ${
                     mainJobIncome === opt.value
-                      ? 'bg-green-50 border-green-500 text-green-700'
-                      : 'bg-white border-gray-200 text-gray-700 hover:border-green-300'
+                      ? 'bg-brand-50 border-brand-500 text-brand-700'
+                      : 'bg-white border-gray-200 text-gray-700 hover:border-brand-300'
                   }`}
                 >
                   {opt.label}
@@ -145,8 +145,8 @@ export default function FukugyouForm() {
                   onClick={() => setSideJobType(type)}
                   className={`py-2 px-3 rounded-lg border text-xs font-medium transition-colors text-left ${
                     sideJobType === type
-                      ? 'bg-green-50 border-green-500 text-green-700'
-                      : 'bg-white border-gray-200 text-gray-700 hover:border-green-300'
+                      ? 'bg-brand-50 border-brand-500 text-brand-700'
+                      : 'bg-white border-gray-200 text-gray-700 hover:border-brand-300'
                   }`}
                 >
                   {SIDE_JOB_TYPE_LABELS[type]}
@@ -180,7 +180,7 @@ export default function FukugyouForm() {
               sideJobRevenue - sideJobExpenses > 20
                 ? 'bg-brand-50 border border-brand-200'
                 : sideJobRevenue - sideJobExpenses > 0
-                ? 'bg-green-50 border border-green-200'
+                ? 'bg-brand-50 border border-brand-200'
                 : 'bg-brand-50 border border-brand-200'
             }`}>
               <span className="font-semibold">副業の純利益: </span>
@@ -193,7 +193,7 @@ export default function FukugyouForm() {
                 <p className="text-xs mt-1 text-brand-700">20万円超のため確定申告が必要な可能性があります</p>
               )}
               {sideJobRevenue - sideJobExpenses <= 20 && sideJobRevenue - sideJobExpenses > 0 && (
-                <p className="text-xs mt-1 text-green-700">20万円以下のため所得税の確定申告は不要な可能性があります</p>
+                <p className="text-xs mt-1 text-brand-700">20万円以下のため所得税の確定申告は不要な可能性があります</p>
               )}
               {sideJobRevenue - sideJobExpenses <= 0 && (
                 <p className="text-xs mt-1 text-brand-700">赤字の場合、事業所得であれば本業と損益通算できる可能性があります</p>

@@ -1,19 +1,18 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '@/lib/firebase/client';
 import { getPublishedStaticArticles } from '@/lib/seo-articles/article-data';
+import { buildPageMetadata } from '@/lib/seo/metadata';
+import CtaBanner from '@/components/common/CtaBanner';
 
 export const revalidate = 86400;
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: '節税コラム一覧｜税金払いすぎ診断',
   description:
     '会社員・フリーランス・共働き夫婦の節税・確定申告に役立つコラムを50本以上掲載。医療費控除・ふるさと納税・iDeCo・扶養控除など、知らないと損する控除を徹底解説。',
-  alternates: {
-    canonical: 'https://haraisugi.jp/column',
-  },
-};
+  path: '/column',
+});
 
 type ArticleItem = {
   slug: string;
@@ -97,15 +96,13 @@ export default async function ColumnPage() {
       </div>
 
       {/* CTA */}
-      <div className="mb-10 bg-brand-600 rounded-2xl px-6 py-5 text-center text-white">
-        <p className="text-base font-bold mb-1">まずは3分で控除漏れを診断【無料】</p>
-        <p className="text-sm opacity-90 mb-4">年収・家族構成を入力するだけ。あなたの見落とし控除を自動で発見。</p>
-        <Link
-          href="/"
-          className="inline-block bg-white text-brand-700 font-bold text-sm px-7 py-2.5 rounded-xl hover:bg-brand-50 transition-colors"
-        >
-          税金払いすぎ診断を試す →
-        </Link>
+      <div className="mb-10">
+        <CtaBanner
+          variant="primary"
+          heading="まずは3分で控除漏れを診断【無料】"
+          subtext="年収・家族構成を入力するだけ。あなたの見落とし控除を自動で発見。"
+          label="税金払いすぎ診断を試す →"
+        />
       </div>
 
       {/* カテゴリ別記事一覧 */}
@@ -144,17 +141,13 @@ export default async function ColumnPage() {
       </div>
 
       {/* 末尾CTA */}
-      <div className="mt-12 bg-brand-50 border border-brand-200 rounded-xl px-5 py-5 text-center">
-        <p className="text-sm font-bold text-brand-800 mb-2">あなたの控除漏れを3分で診断</p>
-        <p className="text-xs text-gray-600 mb-3">
-          記事を読んで気になった控除があれば、無料診断で実際の節税額をシミュレーション。
-        </p>
-        <Link
-          href="/"
-          className="inline-block bg-brand-600 text-white text-sm font-semibold px-6 py-2 rounded-lg hover:bg-brand-700 transition-colors"
-        >
-          無料で診断する
-        </Link>
+      <div className="mt-12">
+        <CtaBanner
+          variant="secondary"
+          heading="あなたの控除漏れを3分で診断"
+          subtext="記事を読んで気になった控除があれば、無料診断で実際の節税額をシミュレーション。"
+          label="無料で診断する"
+        />
       </div>
     </main>
   );

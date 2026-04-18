@@ -1,23 +1,14 @@
-import type { Metadata } from 'next';
-import { SITE_URL } from '@/lib/constants';
+import { buildPageMetadata } from '@/lib/seo/metadata';
 import { getNicheDiagnosisLD } from '@/lib/seo/structured-data';
+import NicheDiagnosisPageShell from '@/components/diagnosis/shared/NicheDiagnosisPageShell';
 import FudousanForm from '@/components/diagnosis/fudousan-baikyaku/FudousanForm';
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: '不動産を売ったら税金いくら？特例で0円にできるか診断',
   description:
     '売却額・取得費・所有期間・居住状況を入力するだけで、譲渡所得税の概算と適用可能な特例を自動判定。3,000万円特別控除・10年超軽減税率・相続不動産の取得費加算も対応。',
-  alternates: {
-    canonical: `${SITE_URL}/fudousan-baikyaku`,
-  },
-  openGraph: {
-    title: '不動産を売ったら税金いくら？特例で0円にできるか診断',
-    description:
-      '売却額・取得費・所有期間・居住状況を入力するだけで、譲渡所得税の概算と適用可能な特例を自動判定。3,000万円特別控除・10年超軽減税率・相続不動産の取得費加算も対応。',
-    url: `${SITE_URL}/fudousan-baikyaku`,
-    type: 'website',
-  },
-};
+  path: '/fudousan-baikyaku',
+});
 
 export default function FudousanBaikyakuPage() {
   const ld = getNicheDiagnosisLD({
@@ -28,16 +19,10 @@ export default function FudousanBaikyakuPage() {
   });
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
-      />
-      <div className="max-w-lg mx-auto px-4 py-8">
-        <FudousanForm />
-
-        {/* SEO静的コンテンツ */}
-        <section className="mt-16 space-y-10 text-sm text-gray-700">
+    <NicheDiagnosisPageShell
+      ld={ld}
+      seoContent={
+        <>
           <div>
             <h2 className="text-base font-bold text-gray-900 mb-3">不動産売却にかかる税金（譲渡所得税）の基本</h2>
             <p className="leading-relaxed">
@@ -80,8 +65,10 @@ export default function FudousanBaikyakuPage() {
               ただし投資用不動産の売却損は原則として他の所得との損益通算はできません。
             </p>
           </div>
-        </section>
-      </div>
-    </>
+        </>
+      }
+    >
+      <FudousanForm />
+    </NicheDiagnosisPageShell>
   );
 }

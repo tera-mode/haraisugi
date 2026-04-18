@@ -1,23 +1,14 @@
-import type { Metadata } from 'next';
-import { SITE_URL } from '@/lib/constants';
+import { buildPageMetadata } from '@/lib/seo/metadata';
 import { getNicheDiagnosisLD } from '@/lib/seo/structured-data';
+import NicheDiagnosisPageShell from '@/components/diagnosis/shared/NicheDiagnosisPageShell';
 import FurusatoLimitForm from '@/components/diagnosis/furusato-limit/FurusatoLimitForm';
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: 'ふるさと納税の本当の上限額は？iDeCo・住宅ローン控除を加味して正確計算',
   description:
     '他の控除（iDeCo・住宅ローン控除・医療費控除）を加味した正確なふるさと納税上限額を計算。多くの簡易計算機では考慮されない併用影響を反映。',
-  alternates: {
-    canonical: `${SITE_URL}/furusato-limit`,
-  },
-  openGraph: {
-    title: 'ふるさと納税の本当の上限額は？iDeCo・住宅ローン控除を加味して正確計算',
-    description:
-      '他の控除（iDeCo・住宅ローン控除・医療費控除）を加味した正確なふるさと納税上限額を計算。多くの簡易計算機では考慮されない併用影響を反映。',
-    url: `${SITE_URL}/furusato-limit`,
-    type: 'website',
-  },
-};
+  path: '/furusato-limit',
+});
 
 export default function FurusatoLimitPage() {
   const ld = getNicheDiagnosisLD({
@@ -28,16 +19,10 @@ export default function FurusatoLimitPage() {
   });
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
-      />
-      <div className="max-w-lg mx-auto px-4 py-8">
-        <FurusatoLimitForm />
-
-        {/* SEO静的コンテンツ */}
-        <section className="mt-16 space-y-10 text-sm text-gray-700">
+    <NicheDiagnosisPageShell
+      ld={ld}
+      seoContent={
+        <>
           <div>
             <h2 className="text-base font-bold text-gray-900 mb-3">ふるさと納税の上限額の計算式</h2>
             <p className="leading-relaxed">
@@ -88,8 +73,10 @@ export default function FurusatoLimitPage() {
               </li>
             </ul>
           </div>
-        </section>
-      </div>
-    </>
+        </>
+      }
+    >
+      <FurusatoLimitForm />
+    </NicheDiagnosisPageShell>
   );
 }

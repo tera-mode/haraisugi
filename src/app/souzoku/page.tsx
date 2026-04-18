@@ -1,23 +1,14 @@
-import type { Metadata } from 'next';
-import { SITE_URL } from '@/lib/constants';
+import { buildPageMetadata } from '@/lib/seo/metadata';
 import { getNicheDiagnosisLD } from '@/lib/seo/structured-data';
+import NicheDiagnosisPageShell from '@/components/diagnosis/shared/NicheDiagnosisPageShell';
 import SouzokuForm from '@/components/diagnosis/souzoku/SouzokuForm';
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: 'うちは相続税かかる？3分でわかる相続税シミュレーション',
   description:
     '相続人の構成と財産の概算を入力するだけで、相続税の概算額と使える特例・控除を自動診断。基礎控除・配偶者軽減・小規模宅地特例・生命保険非課税枠も考慮。',
-  alternates: {
-    canonical: `${SITE_URL}/souzoku`,
-  },
-  openGraph: {
-    title: 'うちは相続税かかる？3分でわかる相続税シミュレーション',
-    description:
-      '相続人の構成と財産の概算を入力するだけで、相続税の概算額と使える特例・控除を自動診断。基礎控除・配偶者軽減・小規模宅地特例・生命保険非課税枠も考慮。',
-    url: `${SITE_URL}/souzoku`,
-    type: 'website',
-  },
-};
+  path: '/souzoku',
+});
 
 export default function SouzokuPage() {
   const ld = getNicheDiagnosisLD({
@@ -27,16 +18,10 @@ export default function SouzokuPage() {
   });
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
-      />
-      <div className="max-w-lg mx-auto px-4 py-8">
-        <SouzokuForm />
-
-        {/* SEO静的コンテンツ */}
-        <section className="mt-16 space-y-10 text-sm text-gray-700">
+    <NicheDiagnosisPageShell
+      ld={ld}
+      seoContent={
+        <>
           <div>
             <h2 className="text-base font-bold text-gray-900 mb-3">相続税の基礎控除と課税対象の判定</h2>
             <p className="leading-relaxed">
@@ -74,8 +59,10 @@ export default function SouzokuPage() {
               <li>小規模宅地特例を使えるよう同居・家屋の整理を事前に検討</li>
             </ul>
           </div>
-        </section>
-      </div>
-    </>
+        </>
+      }
+    >
+      <SouzokuForm />
+    </NicheDiagnosisPageShell>
   );
 }

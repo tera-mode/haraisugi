@@ -1,23 +1,14 @@
-import type { Metadata } from 'next';
-import { SITE_URL } from '@/lib/constants';
+import { buildPageMetadata } from '@/lib/seo/metadata';
 import { getNicheDiagnosisLD } from '@/lib/seo/structured-data';
+import NicheDiagnosisPageShell from '@/components/diagnosis/shared/NicheDiagnosisPageShell';
 import MedicalCheckForm from '@/components/diagnosis/medical-check/MedicalCheckForm';
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: '医療費控除とセルフメディケーション税制どっちが得？自動判定ツール',
   description:
     '年間の医療費とOTC医薬品購入額を入力するだけで、あなたに有利な制度を自動判定。還付額の差額まで計算します。',
-  alternates: {
-    canonical: `${SITE_URL}/medical-check`,
-  },
-  openGraph: {
-    title: '医療費控除とセルフメディケーション税制どっちが得？自動判定ツール',
-    description:
-      '年間の医療費とOTC医薬品購入額を入力するだけで、あなたに有利な制度を自動判定。還付額の差額まで計算します。',
-    url: `${SITE_URL}/medical-check`,
-    type: 'website',
-  },
-};
+  path: '/medical-check',
+});
 
 export default function MedicalCheckPage() {
   const ld = getNicheDiagnosisLD({
@@ -27,16 +18,10 @@ export default function MedicalCheckPage() {
   });
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
-      />
-      <div className="max-w-lg mx-auto px-4 py-8">
-        <MedicalCheckForm />
-
-        {/* SEO静的コンテンツ */}
-        <section className="mt-16 space-y-10 text-sm text-gray-700">
+    <NicheDiagnosisPageShell
+      ld={ld}
+      seoContent={
+        <>
           <div>
             <h2 className="text-base font-bold text-gray-900 mb-3">医療費控除とセルフメディケーション税制とは？</h2>
             <p className="leading-relaxed">
@@ -62,8 +47,10 @@ export default function MedicalCheckPage() {
               <li>総所得が200万円未満 → 医療費控除の足切りが有利になる（5%ルール）</li>
             </ul>
           </div>
-        </section>
-      </div>
-    </>
+        </>
+      }
+    >
+      <MedicalCheckForm />
+    </NicheDiagnosisPageShell>
   );
 }

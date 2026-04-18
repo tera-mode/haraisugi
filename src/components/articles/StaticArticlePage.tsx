@@ -1,20 +1,7 @@
-import Link from 'next/link';
 import type { ArticleContent, ContentBlock } from '@/lib/seo-articles/article-contents';
 import type { StaticArticle } from '@/lib/seo-articles/article-data';
 import Disclaimer from '@/components/common/Disclaimer';
-
-const CTA = ({ label = '無料で診断する →' }: { label?: string }) => (
-  <div className="my-8 bg-brand-600 rounded-2xl px-6 py-5 text-center text-white">
-    <p className="text-base font-bold mb-1">あなたの控除漏れを3分で診断【無料】</p>
-    <p className="text-sm opacity-90 mb-4">年収・家族構成を入力するだけ。見落とし控除を今すぐ確認。</p>
-    <Link
-      href="/"
-      className="inline-block bg-white text-brand-700 font-bold text-sm px-7 py-2.5 rounded-xl hover:bg-brand-50 transition-colors"
-    >
-      {label}
-    </Link>
-  </div>
-);
+import CtaBanner from '@/components/common/CtaBanner';
 
 const InfoBox = ({ variant, text }: { variant: 'tip' | 'warn' | 'check'; text: string }) => {
   const styles = {
@@ -116,7 +103,12 @@ export default function StaticArticlePage({ content, meta }: Props) {
         </div>
       </section>
 
-      <CTA label="まず無料診断で控除漏れをチェック →" />
+      <CtaBanner
+        variant="primary"
+        heading="あなたの控除漏れを3分で診断【無料】"
+        subtext="年収・家族構成を入力するだけ。見落とし控除を今すぐ確認。"
+        label="まず無料診断で控除漏れをチェック →"
+      />
 
       {/* 本文セクション（CTAを3か所に分散） */}
       {content.sections.map((section, si) => (
@@ -128,7 +120,14 @@ export default function StaticArticlePage({ content, meta }: Props) {
             <Block key={bi} block={block} />
           ))}
           {/* 中間CTAを2番目のセクションの後に表示 */}
-          {si === 1 && <CTA label="控除漏れを無料チェック →" />}
+          {si === 1 && (
+            <CtaBanner
+              variant="primary"
+              heading="あなたの控除漏れを3分で診断【無料】"
+              subtext="年収・家族構成を入力するだけ。見落とし控除を今すぐ確認。"
+              label="控除漏れを無料チェック →"
+            />
+          )}
         </section>
       ))}
 
@@ -171,7 +170,12 @@ export default function StaticArticlePage({ content, meta }: Props) {
       )}
 
       {/* 末尾CTA */}
-      <CTA label="税金払いすぎ診断を無料で試す →" />
+      <CtaBanner
+        variant="primary"
+        heading="あなたの控除漏れを3分で診断【無料】"
+        subtext="年収・家族構成を入力するだけ。見落とし控除を今すぐ確認。"
+        label="税金払いすぎ診断を無料で試す →"
+      />
     </article>
   );
 }

@@ -226,6 +226,15 @@ export const staticArticles: Record<string, StaticArticle> = {
     updatedAt: '2026-04-08',
     published: true,
   },
+  'ideco-hajimekata-kanzen-guide': {
+    slug: 'ideco-hajimekata-kanzen-guide',
+    title: 'iDeCo（個人型確定拠出年金）の始め方完全ガイド｜節税効果・証券会社選びまで',
+    description: 'iDeCoの始め方を手順別に解説。年収・加入区分別の節税シミュレーション、おすすめ証券会社の選び方、注意点まで網羅。月2.3万円の拠出で年間最大9万円の節税。',
+    category: 'iDeCo',
+    publishedAt: '2026-04-18',
+    updatedAt: '2026-04-18',
+    published: true,
+  },
   // Phase 3: 退職金・iDeCo ピラー＋クラスター追加分
   'taishoku-ideco-saiteki': {
     slug: 'taishoku-ideco-saiteki',

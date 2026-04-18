@@ -1,16 +1,13 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import DiagnosisMenuCard from '@/components/common/DiagnosisMenuCard';
-import { SITE_URL } from '@/lib/constants';
+import { buildPageMetadata } from '@/lib/seo/metadata';
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: '節税診断メニュー一覧',
   description:
     '医療費控除・共働き控除・退職金・副業・相続・ふるさと納税・不動産売却など、7つのニッチ節税シミュレーションを無料で利用できます。',
-  alternates: {
-    canonical: `${SITE_URL}/tools`,
-  },
-};
+  path: '/tools',
+});
 
 const DIAGNOSES = [
   {

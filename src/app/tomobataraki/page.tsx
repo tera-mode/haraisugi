@@ -1,23 +1,14 @@
-import type { Metadata } from 'next';
-import { SITE_URL } from '@/lib/constants';
+import { buildPageMetadata } from '@/lib/seo/metadata';
 import { getNicheDiagnosisLD } from '@/lib/seo/structured-data';
+import NicheDiagnosisPageShell from '@/components/diagnosis/shared/NicheDiagnosisPageShell';
 import TomobatarakiForm from '@/components/diagnosis/tomobataraki/TomobatarakiForm';
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: '共働き世帯の扶養・控除 最適配分診断｜年末調整で損をしない方法',
   description:
     '夫婦の年収・子の年齢・保険加入状況を入力するだけで、扶養控除を夫婦どちらに入れると得かを自動診断。年間数万円の節税につながるケースも。',
-  alternates: {
-    canonical: `${SITE_URL}/tomobataraki`,
-  },
-  openGraph: {
-    title: '共働き世帯の扶養・控除 最適配分診断｜年末調整で損をしない方法',
-    description:
-      '夫婦の年収・子の年齢・保険加入状況を入力するだけで、扶養控除を夫婦どちらに入れると得かを自動診断。年間数万円の節税につながるケースも。',
-    url: `${SITE_URL}/tomobataraki`,
-    type: 'website',
-  },
-};
+  path: '/tomobataraki',
+});
 
 export default function TomobatarakiPage() {
   const ld = getNicheDiagnosisLD({
@@ -27,16 +18,10 @@ export default function TomobatarakiPage() {
   });
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
-      />
-      <div className="max-w-lg mx-auto px-4 py-8">
-        <TomobatarakiForm />
-
-        {/* SEO静的コンテンツ */}
-        <section className="mt-16 space-y-10 text-sm text-gray-700">
+    <NicheDiagnosisPageShell
+      ld={ld}
+      seoContent={
+        <>
           <div>
             <h2 className="text-base font-bold text-gray-900 mb-3">共働き世帯が損をしやすい「扶養控除の申告先」とは？</h2>
             <p className="leading-relaxed">
@@ -76,8 +61,10 @@ export default function TomobatarakiPage() {
               夫婦どちらの扶養に入れるかによって節税額が異なるため、年収が高い（税率が高い）方に申告するのが原則です。
             </p>
           </div>
-        </section>
-      </div>
-    </>
+        </>
+      }
+    >
+      <TomobatarakiForm />
+    </NicheDiagnosisPageShell>
   );
 }

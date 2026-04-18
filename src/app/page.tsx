@@ -1,11 +1,20 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import DiagnosisForm from '@/components/diagnosis/DiagnosisForm';
-import { SITE_URL } from '@/lib/constants';
+import { SITE_URL, OGP_IMAGE, SITE_NAME } from '@/lib/constants';
 
 export const metadata: Metadata = {
   alternates: {
     canonical: SITE_URL,
+  },
+  openGraph: {
+    title: '税金払いすぎ診断 — あなたの取りこぼし控除を3分で発見【無料】',
+    description:
+      '年収・家族構成を入力するだけで、見逃している控除と節税テクニックを提案。サラリーマンの医療費控除の裏技、iDeCo・ふるさと納税の最適配分まで。',
+    url: SITE_URL,
+    type: 'website',
+    siteName: SITE_NAME,
+    images: [{ url: OGP_IMAGE, width: 1200, height: 630 }],
   },
 };
 

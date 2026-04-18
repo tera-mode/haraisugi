@@ -1,23 +1,14 @@
-import type { Metadata } from 'next';
-import { SITE_URL } from '@/lib/constants';
+import { buildPageMetadata } from '@/lib/seo/metadata';
 import { getNicheDiagnosisLD } from '@/lib/seo/structured-data';
+import NicheDiagnosisPageShell from '@/components/diagnosis/shared/NicheDiagnosisPageShell';
 import FukugyouForm from '@/components/diagnosis/fukugyou-shindan/FukugyouForm';
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: '副業の確定申告、あなたは必要？事業所得vs雑所得も判定',
   description:
     '副業の種類・収入額・経費を入力するだけで、確定申告の要否・所得区分・最適な申告方法を自動判定。住民税の申告義務や損益通算・青色申告特別控除も診断。',
-  alternates: {
-    canonical: `${SITE_URL}/fukugyou-shindan`,
-  },
-  openGraph: {
-    title: '副業の確定申告、あなたは必要？事業所得vs雑所得も判定',
-    description:
-      '副業の種類・収入額・経費を入力するだけで、確定申告の要否・所得区分・最適な申告方法を自動判定。住民税の申告義務や損益通算・青色申告特別控除も診断。',
-    url: `${SITE_URL}/fukugyou-shindan`,
-    type: 'website',
-  },
-};
+  path: '/fukugyou-shindan',
+});
 
 export default function FukugyouShindanPage() {
   const ld = getNicheDiagnosisLD({
@@ -27,16 +18,10 @@ export default function FukugyouShindanPage() {
   });
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
-      />
-      <div className="max-w-lg mx-auto px-4 py-8">
-        <FukugyouForm />
-
-        {/* SEO静的コンテンツ */}
-        <section className="mt-16 space-y-10 text-sm text-gray-700">
+    <NicheDiagnosisPageShell
+      ld={ld}
+      seoContent={
+        <>
           <div>
             <h2 className="text-base font-bold text-gray-900 mb-3">副業所得20万円以下でも確定申告が必要なケース</h2>
             <p className="leading-relaxed">
@@ -83,8 +68,10 @@ export default function FukugyouShindanPage() {
               会社への情報漏洩防止には効果がありますが、申告自体を省略することはできません。
             </p>
           </div>
-        </section>
-      </div>
-    </>
+        </>
+      }
+    >
+      <FukugyouForm />
+    </NicheDiagnosisPageShell>
   );
 }

@@ -17,6 +17,7 @@ export default function Header() {
           />
         </Link>
         <nav className="flex gap-4 text-sm text-gray-600">
+          <Link href="/tools" className="hover:text-brand-700">診断メニュー</Link>
           <Link href="/column" className="hover:text-brand-700">節税コラム</Link>
         </nav>
       </div>

@@ -33,7 +33,7 @@ export default function NavButtons({
         className={`flex-[2] py-3 rounded-lg text-sm font-semibold transition-colors ${
           canNext
             ? isLast
-              ? 'bg-green-600 hover:bg-green-700 text-white'
+              ? 'bg-brand-600 hover:bg-brand-700 text-white'
               : 'bg-brand-600 hover:bg-brand-700 text-white'
             : 'bg-gray-200 text-gray-400 cursor-not-allowed'
         }`}

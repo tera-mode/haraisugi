@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import Disclaimer from '@/components/common/Disclaimer';
+import CtaBanner from '@/components/common/CtaBanner';
 
 type Props = {
   title: string;
@@ -24,17 +24,13 @@ export default function ArticleLayout({ title, body, publishedAt, category }: Pr
         <ReactMarkdown>{body}</ReactMarkdown>
       </div>
 
-      <div className="mt-12 bg-brand-50 border border-brand-200 rounded-xl px-5 py-5 text-center">
-        <p className="text-sm font-bold text-brand-800 mb-2">税金払いすぎ診断で無料チェック</p>
-        <p className="text-xs text-gray-600 mb-3">
-          あなたの年収・家族構成を入力するだけで、見逃し控除を3分で発見します。
-        </p>
-        <Link
-          href="/"
-          className="inline-block bg-brand-600 text-white text-sm font-semibold px-6 py-2 rounded-lg hover:bg-brand-700 transition-colors"
-        >
-          無料で診断する
-        </Link>
+      <div className="mt-12">
+        <CtaBanner
+          variant="secondary"
+          heading="税金払いすぎ診断で無料チェック"
+          subtext="あなたの年収・家族構成を入力するだけで、見逃し控除を3分で発見します。"
+          label="無料で診断する"
+        />
       </div>
     </article>
   );
