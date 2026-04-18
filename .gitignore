@@ -41,3 +41,9 @@ docs/playtest_reports/
 .playwright-mcp/
 .mcp.json
 .claude/settings.local.json
+
+# 一時ファイル・スクリーンショット（ルートに放置しない）
+/tmp/
+/*.png
+/*.jpg
+/*.jpeg
