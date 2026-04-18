@@ -113,7 +113,7 @@ function ResultContent() {
         <button
           type="button"
           onClick={() => router.push('/')}
-          className="text-sm text-blue-600 hover:text-blue-800 underline"
+          className="text-sm text-brand-600 hover:text-brand-800 underline"
         >
           もう一度診断する
         </button>

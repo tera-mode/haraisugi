@@ -97,12 +97,12 @@ export default async function ColumnPage() {
       </div>
 
       {/* CTA */}
-      <div className="mb-10 bg-blue-600 rounded-2xl px-6 py-5 text-center text-white">
+      <div className="mb-10 bg-brand-600 rounded-2xl px-6 py-5 text-center text-white">
         <p className="text-base font-bold mb-1">まずは3分で控除漏れを診断【無料】</p>
         <p className="text-sm opacity-90 mb-4">年収・家族構成を入力するだけ。あなたの見落とし控除を自動で発見。</p>
         <Link
           href="/"
-          className="inline-block bg-white text-blue-700 font-bold text-sm px-7 py-2.5 rounded-xl hover:bg-blue-50 transition-colors"
+          className="inline-block bg-white text-brand-700 font-bold text-sm px-7 py-2.5 rounded-xl hover:bg-brand-50 transition-colors"
         >
           税金払いすぎ診断を試す →
         </Link>
@@ -112,7 +112,7 @@ export default async function ColumnPage() {
       <div className="space-y-10">
         {orderedCategories.map((category) => (
           <section key={category}>
-            <h2 className="text-base font-bold text-blue-700 border-b border-blue-200 pb-1 mb-4">
+            <h2 className="text-base font-bold text-brand-700 border-b border-brand-200 pb-1 mb-4">
               {category}
             </h2>
             <div className="space-y-3">
@@ -120,10 +120,10 @@ export default async function ColumnPage() {
                 <Link
                   key={article.slug}
                   href={`/articles/${article.slug}`}
-                  className="block bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-blue-400 hover:shadow-sm transition-all"
+                  className="block bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-brand-400 hover:shadow-sm transition-all"
                 >
                   <div className="flex items-start gap-3">
-                    <span className="shrink-0 text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-medium mt-0.5">
+                    <span className="shrink-0 text-xs bg-brand-100 text-brand-700 px-2 py-0.5 rounded-full font-medium mt-0.5">
                       {article.category}
                     </span>
                     <div className="min-w-0">
@@ -144,14 +144,14 @@ export default async function ColumnPage() {
       </div>
 
       {/* 末尾CTA */}
-      <div className="mt-12 bg-blue-50 border border-blue-200 rounded-xl px-5 py-5 text-center">
-        <p className="text-sm font-bold text-blue-800 mb-2">あなたの控除漏れを3分で診断</p>
+      <div className="mt-12 bg-brand-50 border border-brand-200 rounded-xl px-5 py-5 text-center">
+        <p className="text-sm font-bold text-brand-800 mb-2">あなたの控除漏れを3分で診断</p>
         <p className="text-xs text-gray-600 mb-3">
           記事を読んで気になった控除があれば、無料診断で実際の節税額をシミュレーション。
         </p>
         <Link
           href="/"
-          className="inline-block bg-blue-600 text-white text-sm font-semibold px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+          className="inline-block bg-brand-600 text-white text-sm font-semibold px-6 py-2 rounded-lg hover:bg-brand-700 transition-colors"
         >
           無料で診断する
         </Link>

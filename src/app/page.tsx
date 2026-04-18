@@ -82,7 +82,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/column"
-            className="inline-block text-blue-600 font-semibold hover:underline"
+            className="inline-block text-brand-600 font-semibold hover:underline"
           >
             節税コラム一覧を見る →
           </Link>
@@ -95,7 +95,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/tools"
-            className="inline-block text-blue-600 font-semibold hover:underline"
+            className="inline-block text-brand-600 font-semibold hover:underline"
           >
             節税診断メニューを見る →
           </Link>

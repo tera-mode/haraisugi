@@ -178,10 +178,10 @@ export default function FukugyouForm() {
           {sideJobRevenue > 0 && (
             <div className={`rounded-xl p-3 mt-2 text-sm ${
               sideJobRevenue - sideJobExpenses > 20
-                ? 'bg-orange-50 border border-orange-200'
+                ? 'bg-brand-50 border border-brand-200'
                 : sideJobRevenue - sideJobExpenses > 0
                 ? 'bg-green-50 border border-green-200'
-                : 'bg-blue-50 border border-blue-200'
+                : 'bg-brand-50 border border-brand-200'
             }`}>
               <span className="font-semibold">副業の純利益: </span>
               <span className="font-bold">
@@ -190,13 +190,13 @@ export default function FukugyouForm() {
                   : `▲${sideJobExpenses - sideJobRevenue}万円（赤字）`}
               </span>
               {sideJobRevenue - sideJobExpenses > 20 && (
-                <p className="text-xs mt-1 text-orange-700">20万円超のため確定申告が必要な可能性があります</p>
+                <p className="text-xs mt-1 text-brand-700">20万円超のため確定申告が必要な可能性があります</p>
               )}
               {sideJobRevenue - sideJobExpenses <= 20 && sideJobRevenue - sideJobExpenses > 0 && (
                 <p className="text-xs mt-1 text-green-700">20万円以下のため所得税の確定申告は不要な可能性があります</p>
               )}
               {sideJobRevenue - sideJobExpenses <= 0 && (
-                <p className="text-xs mt-1 text-blue-700">赤字の場合、事業所得であれば本業と損益通算できる可能性があります</p>
+                <p className="text-xs mt-1 text-brand-700">赤字の場合、事業所得であれば本業と損益通算できる可能性があります</p>
               )}
             </div>
           )}

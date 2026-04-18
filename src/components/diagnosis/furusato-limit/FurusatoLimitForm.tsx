@@ -117,8 +117,8 @@ export default function FurusatoLimitForm() {
                   }}
                   className={`py-2 px-3 rounded-lg border text-sm font-medium transition-colors ${
                     annualIncome === p.value
-                      ? 'bg-orange-500 text-white border-orange-500'
-                      : 'bg-white text-gray-700 border-gray-200 hover:border-orange-300'
+                      ? 'bg-brand-500 text-white border-brand-500'
+                      : 'bg-white text-gray-700 border-gray-200 hover:border-brand-300'
                   }`}
                 >
                   {p.label}
@@ -151,8 +151,8 @@ export default function FurusatoLimitForm() {
                   onClick={() => setHasSpouse(opt.value)}
                   className={`flex-1 py-2 px-3 rounded-lg border text-sm font-medium transition-colors ${
                     hasSpouse === opt.value
-                      ? 'bg-orange-500 text-white border-orange-500'
-                      : 'bg-white text-gray-700 border-gray-200 hover:border-orange-300'
+                      ? 'bg-brand-500 text-white border-brand-500'
+                      : 'bg-white text-gray-700 border-gray-200 hover:border-brand-300'
                   }`}
                 >
                   {opt.label}
@@ -172,8 +172,8 @@ export default function FurusatoLimitForm() {
                   onClick={() => setNumDependents(n)}
                   className={`flex-1 py-2 px-3 rounded-lg border text-sm font-medium transition-colors ${
                     numDependents === n
-                      ? 'bg-orange-500 text-white border-orange-500'
-                      : 'bg-white text-gray-700 border-gray-200 hover:border-orange-300'
+                      ? 'bg-brand-500 text-white border-brand-500'
+                      : 'bg-white text-gray-700 border-gray-200 hover:border-brand-300'
                   }`}
                 >
                   {n}人
@@ -184,7 +184,7 @@ export default function FurusatoLimitForm() {
 
           {/* ライブプレビュー */}
           {annualIncome !== null && hasSpouse !== null && (
-            <div className="mt-4 p-3 bg-orange-50 rounded-lg text-sm text-orange-800">
+            <div className="mt-4 p-3 bg-brand-50 rounded-lg text-sm text-brand-800">
               <span className="font-bold">入力内容確認: </span>
               年収{annualIncome}万円、配偶者控除{hasSpouse ? 'あり' : 'なし'}、扶養{numDependents}人
             </div>
@@ -235,7 +235,7 @@ export default function FurusatoLimitForm() {
           />
 
           {/* ライブプレビュー */}
-          <div className="mt-4 p-3 bg-orange-50 rounded-lg text-xs text-orange-800 space-y-1">
+          <div className="mt-4 p-3 bg-brand-50 rounded-lg text-xs text-brand-800 space-y-1">
             {iDeCoMonthly > 0 && (
               <p>✓ iDeCo年額 {(iDeCoMonthly * 12).toFixed(1)}万円 → 課税所得が下がり上限が若干減少</p>
             )}

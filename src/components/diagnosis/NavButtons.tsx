@@ -34,7 +34,7 @@ export default function NavButtons({
           canNext
             ? isLast
               ? 'bg-green-600 hover:bg-green-700 text-white'
-              : 'bg-blue-600 hover:bg-blue-700 text-white'
+              : 'bg-brand-600 hover:bg-brand-700 text-white'
             : 'bg-gray-200 text-gray-400 cursor-not-allowed'
         }`}
       >

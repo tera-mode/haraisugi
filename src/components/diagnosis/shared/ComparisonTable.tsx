@@ -29,7 +29,7 @@ export default function ComparisonTable({ leftHeader, rightHeader, rows }: Props
               <td
                 className={`px-4 py-3 text-center font-medium ${
                   row.highlight === 'left'
-                    ? 'text-blue-700 bg-blue-50'
+                    ? 'text-brand-700 bg-brand-50'
                     : 'text-gray-800'
                 }`}
               >
@@ -38,7 +38,7 @@ export default function ComparisonTable({ leftHeader, rightHeader, rows }: Props
               <td
                 className={`px-4 py-3 text-center font-medium ${
                   row.highlight === 'right'
-                    ? 'text-blue-700 bg-blue-50'
+                    ? 'text-brand-700 bg-brand-50'
                     : 'text-gray-800'
                 }`}
               >

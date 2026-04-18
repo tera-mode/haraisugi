@@ -41,8 +41,8 @@ export default function StepIncome({ income, workStyle, onIncomeChange, onWorkSt
               onClick={() => onIncomeChange(opt.value)}
               className={`py-3 px-4 rounded-lg border text-sm font-medium transition-colors text-left ${
                 income === opt.value
-                  ? 'bg-blue-50 border-blue-500 text-blue-700'
-                  : 'bg-white border-gray-200 text-gray-700 hover:border-blue-300'
+                  ? 'bg-brand-50 border-brand-500 text-brand-700'
+                  : 'bg-white border-gray-200 text-gray-700 hover:border-brand-300'
               }`}
             >
               {opt.label}
@@ -61,12 +61,12 @@ export default function StepIncome({ income, workStyle, onIncomeChange, onWorkSt
               onClick={() => onWorkStyleChange(opt.value)}
               className={`py-3 px-4 rounded-lg border text-sm transition-colors text-left ${
                 workStyle === opt.value
-                  ? 'bg-blue-50 border-blue-500'
-                  : 'bg-white border-gray-200 hover:border-blue-300'
+                  ? 'bg-brand-50 border-brand-500'
+                  : 'bg-white border-gray-200 hover:border-brand-300'
               }`}
             >
               <span className="mr-2">{opt.icon}</span>
-              <span className={`font-semibold ${workStyle === opt.value ? 'text-blue-700' : 'text-gray-800'}`}>
+              <span className={`font-semibold ${workStyle === opt.value ? 'text-brand-700' : 'text-gray-800'}`}>
                 {opt.label}
               </span>
               <span className="text-gray-500 text-xs ml-2">{opt.desc}</span>

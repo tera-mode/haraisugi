@@ -11,7 +11,7 @@ export default function ResultHero({ deductionCount, totalSavings, trickCount }:
       : `約${Math.round(totalSavings / 1000) * 1000}円`;
 
   return (
-    <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-6 text-white text-center mb-6">
+    <div className="bg-gradient-to-br from-brand-600 to-brand-800 rounded-2xl p-6 text-white text-center mb-6">
       <p className="text-sm opacity-80 mb-2">あなたの取りこぼし節税</p>
       <p className="text-5xl font-extrabold mb-1">{savingsDisplay}</p>
       <p className="text-sm opacity-80 mb-5">推定年間節税額（概算）</p>

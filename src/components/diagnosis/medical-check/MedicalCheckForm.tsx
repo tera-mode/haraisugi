@@ -105,8 +105,8 @@ export default function MedicalCheckForm() {
                 onClick={() => setAnnualIncome(opt.value)}
                 className={`py-3 px-4 rounded-lg border text-sm font-medium transition-colors text-left ${
                   annualIncome === opt.value
-                    ? 'bg-blue-50 border-blue-500 text-blue-700'
-                    : 'bg-white border-gray-200 text-gray-700 hover:border-blue-300'
+                    ? 'bg-brand-50 border-brand-500 text-brand-700'
+                    : 'bg-white border-gray-200 text-gray-700 hover:border-brand-300'
                 }`}
               >
                 {opt.label}
@@ -145,8 +145,8 @@ export default function MedicalCheckForm() {
                   onClick={() => setFamilySize(n)}
                   className={`w-10 h-10 rounded-lg border text-sm font-medium transition-colors ${
                     familySize === n
-                      ? 'bg-blue-50 border-blue-500 text-blue-700'
-                      : 'bg-white border-gray-200 text-gray-700 hover:border-blue-300'
+                      ? 'bg-brand-50 border-brand-500 text-brand-700'
+                      : 'bg-white border-gray-200 text-gray-700 hover:border-brand-300'
                   }`}
                 >
                   {n}
@@ -187,8 +187,8 @@ export default function MedicalCheckForm() {
                   onClick={() => setHasCheckup(opt.value)}
                   className={`flex-1 py-3 px-4 rounded-lg border text-sm font-medium transition-colors ${
                     hasCheckup === opt.value
-                      ? 'bg-blue-50 border-blue-500 text-blue-700'
-                      : 'bg-white border-gray-200 text-gray-700 hover:border-blue-300'
+                      ? 'bg-brand-50 border-brand-500 text-brand-700'
+                      : 'bg-white border-gray-200 text-gray-700 hover:border-brand-300'
                   }`}
                 >
                   {opt.label}

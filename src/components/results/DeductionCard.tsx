@@ -40,7 +40,7 @@ export default function DeductionCard({ deduction, input }: Props) {
             </span>
           </div>
           <p className="font-semibold text-gray-800 truncate">{deduction.name}</p>
-          <p className="text-sm text-blue-600 font-medium">{deduction.savings(input)}</p>
+          <p className="text-sm text-brand-600 font-medium">{deduction.savings(input)}</p>
         </div>
         <span className="text-gray-400 ml-2">{open ? '▲' : '▼'}</span>
       </button>

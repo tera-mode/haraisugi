@@ -148,8 +148,8 @@ export default function TomobatarakiForm() {
                   onClick={() => setHusbandIncome(opt.value)}
                   className={`py-3 px-4 rounded-lg border text-sm font-medium transition-colors text-left ${
                     husbandIncome === opt.value
-                      ? 'bg-blue-50 border-blue-500 text-blue-700'
-                      : 'bg-white border-gray-200 text-gray-700 hover:border-blue-300'
+                      ? 'bg-brand-50 border-brand-500 text-brand-700'
+                      : 'bg-white border-gray-200 text-gray-700 hover:border-brand-300'
                   }`}
                 >
                   {opt.label}
@@ -167,8 +167,8 @@ export default function TomobatarakiForm() {
                   onClick={() => setWifeIncome(opt.value)}
                   className={`py-3 px-4 rounded-lg border text-sm font-medium transition-colors text-left ${
                     wifeIncome === opt.value
-                      ? 'bg-blue-50 border-blue-500 text-blue-700'
-                      : 'bg-white border-gray-200 text-gray-700 hover:border-blue-300'
+                      ? 'bg-brand-50 border-brand-500 text-brand-700'
+                      : 'bg-white border-gray-200 text-gray-700 hover:border-brand-300'
                   }`}
                 >
                   {opt.label}
@@ -213,8 +213,8 @@ export default function TomobatarakiForm() {
                         onClick={() => updateChild(i, 'age', opt.value)}
                         className={`py-2 px-3 rounded-lg border text-xs font-medium transition-colors text-left ${
                           child.age === opt.value
-                            ? 'bg-blue-50 border-blue-500 text-blue-700'
-                            : 'bg-white border-gray-200 text-gray-600 hover:border-blue-300'
+                            ? 'bg-brand-50 border-brand-500 text-brand-700'
+                            : 'bg-white border-gray-200 text-gray-600 hover:border-brand-300'
                         }`}
                       >
                         {opt.label}
@@ -232,8 +232,8 @@ export default function TomobatarakiForm() {
                         onClick={() => updateChild(i, 'currentParent', opt.value)}
                         className={`flex-1 py-2 px-2 rounded-lg border text-xs font-medium transition-colors ${
                           child.currentParent === opt.value
-                            ? 'bg-blue-50 border-blue-500 text-blue-700'
-                            : 'bg-white border-gray-200 text-gray-600 hover:border-blue-300'
+                            ? 'bg-brand-50 border-brand-500 text-brand-700'
+                            : 'bg-white border-gray-200 text-gray-600 hover:border-brand-300'
                         }`}
                       >
                         {opt.label}
@@ -248,7 +248,7 @@ export default function TomobatarakiForm() {
             <button
               type="button"
               onClick={addChild}
-              className="w-full py-3 rounded-xl border-2 border-dashed border-gray-300 text-sm text-gray-500 hover:border-blue-300 hover:text-blue-600 transition-colors"
+              className="w-full py-3 rounded-xl border-2 border-dashed border-gray-300 text-sm text-gray-500 hover:border-brand-300 hover:text-brand-600 transition-colors"
             >
               ＋ 子どもを追加する
             </button>
@@ -278,8 +278,8 @@ export default function TomobatarakiForm() {
                   onClick={() => setHasElderlyParent(opt.value)}
                   className={`flex-1 py-3 px-4 rounded-lg border text-sm font-medium transition-colors ${
                     hasElderlyParent === opt.value
-                      ? 'bg-blue-50 border-blue-500 text-blue-700'
-                      : 'bg-white border-gray-200 text-gray-700 hover:border-blue-300'
+                      ? 'bg-brand-50 border-brand-500 text-brand-700'
+                      : 'bg-white border-gray-200 text-gray-700 hover:border-brand-300'
                   }`}
                 >
                   {opt.label}
@@ -299,8 +299,8 @@ export default function TomobatarakiForm() {
                         onClick={() => setElderlyLiving(opt.v)}
                         className={`flex-1 py-2 px-3 rounded-lg border text-xs font-medium transition-colors ${
                           elderlyLiving === opt.v
-                            ? 'bg-blue-50 border-blue-500 text-blue-700'
-                            : 'bg-white border-gray-200 text-gray-600 hover:border-blue-300'
+                            ? 'bg-brand-50 border-brand-500 text-brand-700'
+                            : 'bg-white border-gray-200 text-gray-600 hover:border-brand-300'
                         }`}
                       >
                         {opt.l}
@@ -318,8 +318,8 @@ export default function TomobatarakiForm() {
                         onClick={() => setElderlyParentSide(opt.value)}
                         className={`flex-1 py-2 px-2 rounded-lg border text-xs font-medium transition-colors ${
                           elderlyParentSide === opt.value
-                            ? 'bg-blue-50 border-blue-500 text-blue-700'
-                            : 'bg-white border-gray-200 text-gray-600 hover:border-blue-300'
+                            ? 'bg-brand-50 border-brand-500 text-brand-700'
+                            : 'bg-white border-gray-200 text-gray-600 hover:border-brand-300'
                         }`}
                       >
                         {opt.label}
@@ -354,7 +354,7 @@ export default function TomobatarakiForm() {
                         type="checkbox"
                         checked={ins[key]}
                         onChange={e => setIns(prev => ({ ...prev, [key]: e.target.checked }))}
-                        className="w-4 h-4 accent-blue-600"
+                        className="w-4 h-4 accent-brand-600"
                       />
                       <span className="text-xs text-gray-700">{label}</span>
                     </label>

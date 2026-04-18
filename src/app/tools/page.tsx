@@ -98,7 +98,7 @@ export default function ToolsPage() {
         <p className="text-sm text-gray-500 mb-2">まずは基本の控除を確認したい方はこちら</p>
         <Link
           href="/"
-          className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm px-8 py-3 rounded-xl transition-colors"
+          className="inline-block bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm px-8 py-3 rounded-xl transition-colors"
         >
           税金払いすぎ診断（基本版）を使う →
         </Link>

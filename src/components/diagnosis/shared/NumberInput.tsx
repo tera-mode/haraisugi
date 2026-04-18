@@ -36,7 +36,7 @@ export default function NumberInput({
             const v = e.target.value === '' ? 0 : Number(e.target.value);
             if (!isNaN(v) && v >= min) onChange(v);
           }}
-          className="w-32 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+          className="w-32 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500"
         />
         <span className="text-sm text-gray-600">{unit}</span>
       </div>

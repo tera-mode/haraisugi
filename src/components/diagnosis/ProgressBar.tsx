@@ -13,15 +13,15 @@ export default function ProgressBar({ current, total }: ProgressBarProps) {
           <div
             key={label}
             className={`flex flex-col items-center text-xs ${
-              i + 1 <= current ? 'text-blue-600 font-semibold' : 'text-gray-400'
+              i + 1 <= current ? 'text-brand-600 font-semibold' : 'text-gray-400'
             }`}
           >
             <div
               className={`w-7 h-7 rounded-full flex items-center justify-center text-xs mb-1 ${
                 i + 1 < current
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-brand-600 text-white'
                   : i + 1 === current
-                  ? 'bg-blue-600 text-white ring-2 ring-blue-300'
+                  ? 'bg-brand-600 text-white ring-2 ring-brand-300'
                   : 'bg-gray-200 text-gray-400'
               }`}
             >
@@ -33,7 +33,7 @@ export default function ProgressBar({ current, total }: ProgressBarProps) {
       </div>
       <div className="w-full bg-gray-200 rounded-full h-1.5">
         <div
-          className="bg-blue-600 h-1.5 rounded-full transition-all duration-300"
+          className="bg-brand-600 h-1.5 rounded-full transition-all duration-300"
           style={{ width: `${((current - 1) / (total - 1)) * 100}%` }}
         />
       </div>

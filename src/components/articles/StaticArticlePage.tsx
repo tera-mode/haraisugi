@@ -4,12 +4,12 @@ import type { StaticArticle } from '@/lib/seo-articles/article-data';
 import Disclaimer from '@/components/common/Disclaimer';
 
 const CTA = ({ label = '無料で診断する →' }: { label?: string }) => (
-  <div className="my-8 bg-blue-600 rounded-2xl px-6 py-5 text-center text-white">
+  <div className="my-8 bg-brand-600 rounded-2xl px-6 py-5 text-center text-white">
     <p className="text-base font-bold mb-1">あなたの控除漏れを3分で診断【無料】</p>
     <p className="text-sm opacity-90 mb-4">年収・家族構成を入力するだけ。見落とし控除を今すぐ確認。</p>
     <Link
       href="/"
-      className="inline-block bg-white text-blue-700 font-bold text-sm px-7 py-2.5 rounded-xl hover:bg-blue-50 transition-colors"
+      className="inline-block bg-white text-brand-700 font-bold text-sm px-7 py-2.5 rounded-xl hover:bg-brand-50 transition-colors"
     >
       {label}
     </Link>
@@ -18,7 +18,7 @@ const CTA = ({ label = '無料で診断する →' }: { label?: string }) => (
 
 const InfoBox = ({ variant, text }: { variant: 'tip' | 'warn' | 'check'; text: string }) => {
   const styles = {
-    tip: 'bg-blue-50 border-blue-200 text-blue-900',
+    tip: 'bg-brand-50 border-brand-200 text-brand-900',
     warn: 'bg-yellow-50 border-yellow-200 text-yellow-900',
     check: 'bg-green-50 border-green-200 text-green-900',
   };
@@ -95,7 +95,7 @@ export default function StaticArticlePage({ content, meta }: Props) {
     <article className="max-w-2xl mx-auto px-4 py-8">
       {/* ヘッダー */}
       <div className="mb-3">
-        <span className="text-xs bg-blue-100 text-blue-700 px-2.5 py-0.5 rounded-full font-medium">
+        <span className="text-xs bg-brand-100 text-brand-700 px-2.5 py-0.5 rounded-full font-medium">
           {meta.category}
         </span>
       </div>
@@ -121,7 +121,7 @@ export default function StaticArticlePage({ content, meta }: Props) {
       {/* 本文セクション（CTAを3か所に分散） */}
       {content.sections.map((section, si) => (
         <section key={si} className="mb-10">
-          <h2 className="text-xl font-extrabold text-gray-900 mt-10 mb-4 border-b-2 border-blue-500 pb-1">
+          <h2 className="text-xl font-extrabold text-gray-900 mt-10 mb-4 border-b-2 border-brand-500 pb-1">
             {section.h2}
           </h2>
           {section.blocks.map((block, bi) => (
@@ -135,14 +135,14 @@ export default function StaticArticlePage({ content, meta }: Props) {
       {/* FAQセクション */}
       {content.faqs.length > 0 && (
         <section className="mb-10">
-          <h2 className="text-xl font-extrabold text-gray-900 mt-10 mb-4 border-b-2 border-blue-500 pb-1">
+          <h2 className="text-xl font-extrabold text-gray-900 mt-10 mb-4 border-b-2 border-brand-500 pb-1">
             よくある質問
           </h2>
           <div className="space-y-4">
             {content.faqs.map((faq, i) => (
               <div key={i} className="border border-gray-200 rounded-xl overflow-hidden">
-                <div className="bg-blue-50 px-4 py-3">
-                  <p className="text-base font-bold text-blue-900">Q. {faq.q}</p>
+                <div className="bg-brand-50 px-4 py-3">
+                  <p className="text-base font-bold text-brand-900">Q. {faq.q}</p>
                 </div>
                 <div className="px-4 py-3">
                   <p className="text-base text-gray-700 leading-relaxed">A. {faq.a}</p>
@@ -156,13 +156,13 @@ export default function StaticArticlePage({ content, meta }: Props) {
       {/* まとめ */}
       {content.summary.length > 0 && (
         <section className="mb-8">
-          <h2 className="text-xl font-extrabold text-gray-900 mt-10 mb-4 border-b-2 border-blue-500 pb-1">
+          <h2 className="text-xl font-extrabold text-gray-900 mt-10 mb-4 border-b-2 border-brand-500 pb-1">
             まとめ
           </h2>
           <ul className="space-y-2">
             {content.summary.map((point, i) => (
               <li key={i} className="flex items-start gap-2 text-base text-gray-700">
-                <span className="text-blue-500 font-bold mt-0.5">▶</span>
+                <span className="text-brand-500 font-bold mt-0.5">▶</span>
                 <span>{point}</span>
               </li>
             ))}

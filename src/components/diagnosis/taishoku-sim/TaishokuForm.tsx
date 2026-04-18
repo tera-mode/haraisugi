@@ -112,8 +112,8 @@ export default function TaishokuForm() {
                   onClick={() => setYearsOfService(y)}
                   className={`py-2 px-2 rounded-lg border text-sm font-medium transition-colors ${
                     yearsOfService === y
-                      ? 'bg-orange-50 border-orange-500 text-orange-700'
-                      : 'bg-white border-gray-200 text-gray-700 hover:border-orange-300'
+                      ? 'bg-brand-50 border-brand-500 text-brand-700'
+                      : 'bg-white border-gray-200 text-gray-700 hover:border-brand-300'
                   }`}
                 >
                   {y}年
@@ -154,8 +154,8 @@ export default function TaishokuForm() {
                 onClick={() => setHasIdeco(opt.value)}
                 className={`flex-1 py-3 px-4 rounded-lg border text-sm font-medium transition-colors ${
                   hasIdeco === opt.value
-                    ? 'bg-orange-50 border-orange-500 text-orange-700'
-                    : 'bg-white border-gray-200 text-gray-700 hover:border-orange-300'
+                    ? 'bg-brand-50 border-brand-500 text-brand-700'
+                    : 'bg-white border-gray-200 text-gray-700 hover:border-brand-300'
                 }`}
               >
                 {opt.label}
@@ -183,8 +183,8 @@ export default function TaishokuForm() {
                       onClick={() => setIdecoContributionYears(y)}
                       className={`py-2 px-2 rounded-lg border text-sm font-medium transition-colors ${
                         idecoContributionYears === y
-                          ? 'bg-orange-50 border-orange-500 text-orange-700'
-                          : 'bg-white border-gray-200 text-gray-700 hover:border-orange-300'
+                          ? 'bg-brand-50 border-brand-500 text-brand-700'
+                          : 'bg-white border-gray-200 text-gray-700 hover:border-brand-300'
                       }`}
                     >
                       {y}年
@@ -196,7 +196,7 @@ export default function TaishokuForm() {
           )}
 
           {hasIdeco === false && (
-            <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 text-sm text-blue-800">
+            <div className="bg-brand-50 border border-brand-100 rounded-xl p-4 text-sm text-brand-800">
               <p className="font-bold mb-1">iDeCoに加入していない場合も試算できます</p>
               <p className="text-xs">退職金のみの受取方法（一括）をシミュレーションします。iDeCoは老後の節税に非常に有効です。</p>
             </div>
@@ -218,8 +218,8 @@ export default function TaishokuForm() {
                 onClick={() => setAge(opt.value)}
                 className={`py-3 px-2 rounded-lg border text-sm font-medium transition-colors ${
                   age === opt.value
-                    ? 'bg-orange-50 border-orange-500 text-orange-700'
-                    : 'bg-white border-gray-200 text-gray-700 hover:border-orange-300'
+                    ? 'bg-brand-50 border-brand-500 text-brand-700'
+                    : 'bg-white border-gray-200 text-gray-700 hover:border-brand-300'
                 }`}
               >
                 {opt.label}
@@ -233,7 +233,7 @@ export default function TaishokuForm() {
                 type="checkbox"
                 checked={hasDisability}
                 onChange={e => setHasDisability(e.target.checked)}
-                className="w-4 h-4 accent-orange-600"
+                className="w-4 h-4 accent-brand-600"
               />
               <div>
                 <p className="text-sm font-semibold text-gray-700">

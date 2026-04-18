@@ -127,8 +127,8 @@ export default function FudousanForm() {
                   }}
                   className={`w-full flex items-start gap-3 py-3 px-4 rounded-xl border text-left transition-colors ${
                     propertyType === opt.value
-                      ? 'bg-teal-500 text-white border-teal-500'
-                      : 'bg-white text-gray-700 border-gray-200 hover:border-teal-300'
+                      ? 'bg-brand-500 text-white border-brand-500'
+                      : 'bg-white text-gray-700 border-gray-200 hover:border-brand-300'
                   }`}
                 >
                   <div>
@@ -151,7 +151,7 @@ export default function FudousanForm() {
           />
 
           {salePrice > 0 && (
-            <div className="mt-3 p-3 bg-teal-50 rounded-lg text-xs text-teal-800">
+            <div className="mt-3 p-3 bg-brand-50 rounded-lg text-xs text-brand-800">
               仲介手数料の目安: 約{estimatedExpenses}万円（売却価格×3%＋6万円）
             </div>
           )}
@@ -175,8 +175,8 @@ export default function FudousanForm() {
                   onClick={() => setOwnershipYears(p.value)}
                   className={`py-2 px-3 rounded-lg border text-sm font-medium transition-colors ${
                     ownershipYears === p.value
-                      ? 'bg-teal-500 text-white border-teal-500'
-                      : 'bg-white text-gray-700 border-gray-200 hover:border-teal-300'
+                      ? 'bg-brand-500 text-white border-brand-500'
+                      : 'bg-white text-gray-700 border-gray-200 hover:border-brand-300'
                   }`}
                 >
                   {p.label}
@@ -209,8 +209,8 @@ export default function FudousanForm() {
                     onClick={() => setResidencyStatus(opt.value)}
                     className={`w-full py-2 px-3 rounded-lg border text-sm text-left font-medium transition-colors ${
                       residencyStatus === opt.value
-                        ? 'bg-teal-500 text-white border-teal-500'
-                        : 'bg-white text-gray-700 border-gray-200 hover:border-teal-300'
+                        ? 'bg-brand-500 text-white border-brand-500'
+                        : 'bg-white text-gray-700 border-gray-200 hover:border-brand-300'
                     }`}
                   >
                     {opt.label}
@@ -235,8 +235,8 @@ export default function FudousanForm() {
                     onClick={() => setInheritedWithinYear(opt.value)}
                     className={`flex-1 py-2 px-3 rounded-lg border text-sm font-medium transition-colors ${
                       inheritedWithinYear === opt.value
-                        ? 'bg-teal-500 text-white border-teal-500'
-                        : 'bg-white text-gray-700 border-gray-200 hover:border-teal-300'
+                        ? 'bg-brand-500 text-white border-brand-500'
+                        : 'bg-white text-gray-700 border-gray-200 hover:border-brand-300'
                     }`}
                   >
                     {opt.label}

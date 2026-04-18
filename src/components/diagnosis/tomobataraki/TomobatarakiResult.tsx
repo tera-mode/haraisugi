@@ -27,7 +27,7 @@ export default function TomobatarakiResult({ result, onReset }: Props) {
   const { recommendations, unusedDeductions, tips, totalSavings, husbandTaxRate, wifeTaxRate } = result;
 
   const hero = (
-    <div className="bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-2xl p-6 text-white text-center">
+    <div className="bg-gradient-to-br from-brand-600 to-brand-800 rounded-2xl p-6 text-white text-center">
       <p className="text-sm opacity-80 mb-2">最適化による年間節税額（概算）</p>
       {totalSavings > 0 ? (
         <>
@@ -54,10 +54,10 @@ export default function TomobatarakiResult({ result, onReset }: Props) {
           <h2 className="text-base font-bold text-gray-800 mb-3">📋 最適配分の提案</h2>
           <div className="space-y-3">
             {recommendations.map((rec, i) => (
-              <div key={i} className="border border-indigo-100 rounded-xl p-4 bg-indigo-50">
+              <div key={i} className="border border-brand-100 rounded-xl p-4 bg-brand-50">
                 <div className="flex justify-between items-start mb-1">
-                  <p className="text-sm font-bold text-indigo-800 flex-1">{rec.item}</p>
-                  <span className="text-sm font-bold text-indigo-700 ml-2 whitespace-nowrap">
+                  <p className="text-sm font-bold text-brand-800 flex-1">{rec.item}</p>
+                  <span className="text-sm font-bold text-brand-700 ml-2 whitespace-nowrap">
                     {formatYen(rec.effect)}
                   </span>
                 </div>
@@ -66,7 +66,7 @@ export default function TomobatarakiResult({ result, onReset }: Props) {
                   <span>→</span>
                   <span className="bg-green-100 text-green-700 px-2 py-0.5 rounded">最適: {rec.optimal}</span>
                 </div>
-                <p className="text-xs text-indigo-700">{rec.reason}</p>
+                <p className="text-xs text-brand-700">{rec.reason}</p>
               </div>
             ))}
           </div>
@@ -103,14 +103,14 @@ export default function TomobatarakiResult({ result, onReset }: Props) {
           <h2 className="text-base font-bold text-gray-800 mb-3">💬 あなたへの節税アドバイス</h2>
           <div className="space-y-3">
             {tips.map(tip => (
-              <div key={tip.id} className="bg-blue-50 rounded-xl border border-blue-100 p-4">
-                <p className="text-sm font-bold text-blue-800 mb-1">{tip.title}</p>
-                <p className="text-xs text-blue-700 leading-relaxed">{tip.body}</p>
+              <div key={tip.id} className="bg-brand-50 rounded-xl border border-brand-100 p-4">
+                <p className="text-sm font-bold text-brand-800 mb-1">{tip.title}</p>
+                <p className="text-xs text-brand-700 leading-relaxed">{tip.body}</p>
                 <a
                   href={tip.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-blue-500 hover:underline mt-1 inline-block"
+                  className="text-xs text-brand-500 hover:underline mt-1 inline-block"
                 >
                   出典: {tip.source}
                 </a>
@@ -126,7 +126,7 @@ export default function TomobatarakiResult({ result, onReset }: Props) {
 
         <Link
           href="/"
-          className="block bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl px-5 py-4 transition-colors"
+          className="block bg-brand-600 hover:bg-brand-700 text-white rounded-xl px-5 py-4 transition-colors"
         >
           <p className="text-sm font-bold mb-0.5">全控除をまとめてチェック →</p>
           <p className="text-xs opacity-80">税金払いすぎ診断（基本版）でiDeCoなどその他控除も確認</p>
@@ -137,7 +137,7 @@ export default function TomobatarakiResult({ result, onReset }: Props) {
           target="_blank"
           rel="noopener noreferrer sponsored"
           onClick={() => trackEvent('affiliate_click', { key: 'insurance_review', diagnosis: 'tomobataraki' })}
-          className="block bg-white border border-gray-200 hover:border-indigo-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
+          className="block bg-white border border-gray-200 hover:border-brand-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
         >
           <p className="text-xs text-gray-500 mb-0.5">PR</p>
           <p className="text-sm font-bold text-gray-800 mb-0.5">保険料控除の空き枠を活用する →</p>
@@ -149,7 +149,7 @@ export default function TomobatarakiResult({ result, onReset }: Props) {
           target="_blank"
           rel="noopener noreferrer sponsored"
           onClick={() => trackEvent('affiliate_click', { key: 'tax_accountant_dot', diagnosis: 'tomobataraki' })}
-          className="block bg-white border border-gray-200 hover:border-indigo-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
+          className="block bg-white border border-gray-200 hover:border-brand-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
         >
           <p className="text-xs text-gray-500 mb-0.5">PR</p>
           <p className="text-sm font-bold text-gray-800 mb-0.5">年末調整・確定申告の疑問を税理士に相談 →</p>

@@ -112,8 +112,8 @@ export default function SouzokuForm() {
                   onClick={() => setTotalAssets(opt.value)}
                   className={`py-3 px-3 rounded-lg border text-sm font-medium transition-colors ${
                     totalAssets === opt.value
-                      ? 'bg-purple-50 border-purple-500 text-purple-700'
-                      : 'bg-white border-gray-200 text-gray-700 hover:border-purple-300'
+                      ? 'bg-brand-50 border-brand-500 text-brand-700'
+                      : 'bg-white border-gray-200 text-gray-700 hover:border-brand-300'
                   }`}
                 >
                   {opt.label}
@@ -130,8 +130,8 @@ export default function SouzokuForm() {
           />
 
           {totalAssets !== null && (
-            <div className="mt-3 bg-purple-50 border border-purple-100 rounded-xl p-3 text-sm">
-              <p className="text-purple-800">
+            <div className="mt-3 bg-brand-50 border border-brand-100 rounded-xl p-3 text-sm">
+              <p className="text-brand-800">
                 <span className="font-bold">基礎控除の目安: </span>
                 相続人数によって変わります（次のステップで計算します）
               </p>
@@ -159,8 +159,8 @@ export default function SouzokuForm() {
                   onClick={() => setHasSpouse(opt.value)}
                   className={`flex-1 py-3 px-4 rounded-lg border text-sm font-medium transition-colors ${
                     hasSpouse === opt.value
-                      ? 'bg-purple-50 border-purple-500 text-purple-700'
-                      : 'bg-white border-gray-200 text-gray-700 hover:border-purple-300'
+                      ? 'bg-brand-50 border-brand-500 text-brand-700'
+                      : 'bg-white border-gray-200 text-gray-700 hover:border-brand-300'
                   }`}
                 >
                   {opt.label}
@@ -179,8 +179,8 @@ export default function SouzokuForm() {
                   onClick={() => setNumChildren(n)}
                   className={`py-3 rounded-lg border text-sm font-medium transition-colors ${
                     numChildren === n
-                      ? 'bg-purple-50 border-purple-500 text-purple-700'
-                      : 'bg-white border-gray-200 text-gray-700 hover:border-purple-300'
+                      ? 'bg-brand-50 border-brand-500 text-brand-700'
+                      : 'bg-white border-gray-200 text-gray-700 hover:border-brand-300'
                   }`}
                 >
                   {n === 4 ? '4人以上' : `${n}人`}
@@ -191,12 +191,12 @@ export default function SouzokuForm() {
           </div>
 
           {hasSpouse !== null && numChildren !== null && (
-            <div className="mt-4 bg-purple-50 border border-purple-100 rounded-xl p-3">
-              <p className="text-sm text-purple-800">
+            <div className="mt-4 bg-brand-50 border border-brand-100 rounded-xl p-3">
+              <p className="text-sm text-brand-800">
                 <span className="font-bold">法定相続人: </span>
                 {(hasSpouse ? 1 : 0) + numChildren}人
               </p>
-              <p className="text-sm text-purple-800">
+              <p className="text-sm text-brand-800">
                 <span className="font-bold">基礎控除: </span>
                 {3000 + 600 * ((hasSpouse ? 1 : 0) + numChildren)}万円
               </p>
@@ -204,7 +204,7 @@ export default function SouzokuForm() {
                 <p className={`text-sm font-bold mt-1 ${
                   totalAssets <= 3000 + 600 * ((hasSpouse ? 1 : 0) + numChildren)
                     ? 'text-green-700'
-                    : 'text-orange-700'
+                    : 'text-brand-700'
                 }`}>
                   {totalAssets <= 3000 + 600 * ((hasSpouse ? 1 : 0) + numChildren)
                     ? '→ 基礎控除内のため相続税は発生しません（目安）'
@@ -240,8 +240,8 @@ export default function SouzokuForm() {
                     onClick={() => setHasLiveInHeir(opt.value)}
                     className={`flex-1 py-3 px-2 rounded-lg border text-sm font-medium transition-colors ${
                       hasLiveInHeir === opt.value
-                        ? 'bg-purple-50 border-purple-500 text-purple-700'
-                        : 'bg-white border-gray-200 text-gray-700 hover:border-purple-300'
+                        ? 'bg-brand-50 border-brand-500 text-brand-700'
+                        : 'bg-white border-gray-200 text-gray-700 hover:border-brand-300'
                     }`}
                   >
                     {opt.label}

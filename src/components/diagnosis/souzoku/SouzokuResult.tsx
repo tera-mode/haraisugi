@@ -35,7 +35,7 @@ export default function SouzokuResult({ result, onReset }: Props) {
   const hero = (
     <div className={`rounded-2xl p-6 text-white text-center ${
       isSubjectToTax
-        ? 'bg-gradient-to-br from-purple-600 to-purple-800'
+        ? 'bg-gradient-to-br from-brand-600 to-brand-800'
         : 'bg-gradient-to-br from-green-500 to-green-700'
     }`}>
       <p className="text-sm opacity-80 mb-2">推定相続税額（概算）</p>
@@ -95,7 +95,7 @@ export default function SouzokuResult({ result, onReset }: Props) {
           {isSubjectToTax && (
             <div className="flex justify-between font-bold text-base border-t pt-2">
               <span className="text-gray-800">推定相続税額</span>
-              <span className="text-purple-700">{formatMan(estimatedTax)}</span>
+              <span className="text-brand-700">{formatMan(estimatedTax)}</span>
             </div>
           )}
         </div>
@@ -146,14 +146,14 @@ export default function SouzokuResult({ result, onReset }: Props) {
           <h2 className="text-base font-bold text-gray-800 mb-3">💡 相続税の節税アドバイス</h2>
           <div className="space-y-3">
             {tips.map(tip => (
-              <div key={tip.id} className="bg-purple-50 rounded-xl border border-purple-100 p-4">
-                <p className="text-sm font-bold text-purple-800 mb-1">{tip.title}</p>
-                <p className="text-xs text-purple-700 leading-relaxed">{tip.body}</p>
+              <div key={tip.id} className="bg-brand-50 rounded-xl border border-brand-100 p-4">
+                <p className="text-sm font-bold text-brand-800 mb-1">{tip.title}</p>
+                <p className="text-xs text-brand-700 leading-relaxed">{tip.body}</p>
                 <a
                   href={tip.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-purple-500 hover:underline mt-1 inline-block"
+                  className="text-xs text-brand-500 hover:underline mt-1 inline-block"
                 >
                   出典: {tip.source}
                 </a>
@@ -172,7 +172,7 @@ export default function SouzokuResult({ result, onReset }: Props) {
           target="_blank"
           rel="noopener noreferrer sponsored"
           onClick={() => trackEvent('affiliate_click', { key: 'inheritance_tax', diagnosis: 'souzoku' })}
-          className="block bg-purple-600 hover:bg-purple-700 text-white rounded-xl px-5 py-4 transition-colors"
+          className="block bg-brand-600 hover:bg-brand-700 text-white rounded-xl px-5 py-4 transition-colors"
         >
           <p className="text-sm font-bold mb-0.5">相続専門の税理士に相談する →</p>
           <p className="text-xs opacity-80">{AFFILIATE_LINKS.inheritance_tax.label}（相談無料）</p>
@@ -183,7 +183,7 @@ export default function SouzokuResult({ result, onReset }: Props) {
           target="_blank"
           rel="noopener noreferrer sponsored"
           onClick={() => trackEvent('affiliate_click', { key: 'insurance_review', diagnosis: 'souzoku' })}
-          className="block bg-white border border-gray-200 hover:border-purple-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
+          className="block bg-white border border-gray-200 hover:border-brand-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
         >
           <p className="text-xs text-gray-500 mb-0.5">PR</p>
           <p className="text-sm font-bold text-gray-800 mb-0.5">生命保険の相続対策を無料相談 →</p>
@@ -192,7 +192,7 @@ export default function SouzokuResult({ result, onReset }: Props) {
 
         <Link
           href="/taishoku-sim"
-          className="block bg-white border border-gray-200 hover:border-purple-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
+          className="block bg-white border border-gray-200 hover:border-brand-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
         >
           <p className="text-sm font-bold text-gray-800 mb-0.5">退職金の受取方法も最適化する →</p>
           <p className="text-xs text-gray-500">退職金・iDeCo受取戦略シミュレーションで老後設計を確認</p>
@@ -200,7 +200,7 @@ export default function SouzokuResult({ result, onReset }: Props) {
 
         <Link
           href="/"
-          className="block bg-white border border-gray-200 hover:border-purple-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
+          className="block bg-white border border-gray-200 hover:border-brand-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
         >
           <p className="text-sm font-bold text-gray-800 mb-0.5">全控除をまとめてチェック →</p>
           <p className="text-xs text-gray-500">税金払いすぎ診断（基本版）でiDeCo・ふるさと納税も確認</p>

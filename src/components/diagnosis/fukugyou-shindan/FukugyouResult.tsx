@@ -25,8 +25,8 @@ function getCategoryLabel(cat: IncomeCategory): string {
 
 function getCategoryColor(cat: IncomeCategory): string {
   if (cat === 'business') return 'text-green-700 bg-green-100';
-  if (cat === 'miscellaneous') return 'text-blue-700 bg-blue-100';
-  return 'text-orange-700 bg-orange-100';
+  if (cat === 'miscellaneous') return 'text-brand-700 bg-brand-100';
+  return 'text-brand-700 bg-brand-100';
 }
 
 function getFilingLabel(filing: FilingType): string {
@@ -62,7 +62,7 @@ export default function FukugyouResult({ result, onReset }: Props) {
     <div className={`rounded-2xl p-6 text-white text-center ${
       needsTaxReturn
         ? 'bg-gradient-to-br from-green-600 to-green-800'
-        : 'bg-gradient-to-br from-blue-500 to-blue-700'
+        : 'bg-gradient-to-br from-brand-500 to-brand-700'
     }`}>
       <p className="text-sm opacity-80 mb-2">確定申告（所得税）</p>
       <p className="text-4xl font-extrabold mb-2">
@@ -105,7 +105,7 @@ export default function FukugyouResult({ result, onReset }: Props) {
           </div>
           <div className="bg-gray-50 rounded-lg p-3">
             <p className="text-gray-500 mb-1">副業の純利益</p>
-            <p className={`font-bold ${netIncome < 0 ? 'text-blue-600' : 'text-gray-800'}`}>
+            <p className={`font-bold ${netIncome < 0 ? 'text-brand-600' : 'text-gray-800'}`}>
               {netIncome >= 0 ? `${netIncome}万円` : `▲${Math.abs(netIncome)}万円（赤字）`}
             </p>
           </div>

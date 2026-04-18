@@ -14,13 +14,13 @@ type Props = {
 
 const PATTERN_COLORS: Record<string, string> = {
   simultaneous:  'border-gray-200 bg-gray-50',
-  ideco_annuity: 'border-blue-200 bg-blue-50',
+  ideco_annuity: 'border-brand-200 bg-brand-50',
   time_shifted:  'border-green-200 bg-green-50',
 };
 
 const PATTERN_BEST_COLORS: Record<string, string> = {
   simultaneous:  'border-gray-400 bg-gray-100',
-  ideco_annuity: 'border-blue-400 bg-blue-100',
+  ideco_annuity: 'border-brand-400 bg-brand-100',
   time_shifted:  'border-green-500 bg-green-100',
 };
 
@@ -79,7 +79,7 @@ export default function TaishokuResult({ result, onReset }: Props) {
   const bestPattern = patterns.find(p => p.id === bestPatternId)!;
 
   const hero = (
-    <div className="bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl p-6 text-white text-center">
+    <div className="bg-gradient-to-br from-brand-500 to-brand-700 rounded-2xl p-6 text-white text-center">
       <p className="text-sm opacity-80 mb-2">受取方法の最適化で節税できる金額（概算）</p>
       {maxSavings > 0 ? (
         <>
@@ -140,14 +140,14 @@ export default function TaishokuResult({ result, onReset }: Props) {
           <h2 className="text-base font-bold text-gray-800 mb-3">💬 退職金・iDeCoの節税アドバイス</h2>
           <div className="space-y-3">
             {tips.map(tip => (
-              <div key={tip.id} className="bg-orange-50 rounded-xl border border-orange-100 p-4">
-                <p className="text-sm font-bold text-orange-800 mb-1">{tip.title}</p>
-                <p className="text-xs text-orange-700 leading-relaxed">{tip.body}</p>
+              <div key={tip.id} className="bg-brand-50 rounded-xl border border-brand-100 p-4">
+                <p className="text-sm font-bold text-brand-800 mb-1">{tip.title}</p>
+                <p className="text-xs text-brand-700 leading-relaxed">{tip.body}</p>
                 <a
                   href={tip.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-orange-500 hover:underline mt-1 inline-block"
+                  className="text-xs text-brand-500 hover:underline mt-1 inline-block"
                 >
                   出典: {tip.source}
                 </a>
@@ -166,7 +166,7 @@ export default function TaishokuResult({ result, onReset }: Props) {
           target="_blank"
           rel="noopener noreferrer sponsored"
           onClick={() => trackEvent('affiliate_click', { key: 'tax_accountant_dot', diagnosis: 'taishoku_sim' })}
-          className="block bg-orange-600 hover:bg-orange-700 text-white rounded-xl px-5 py-4 transition-colors"
+          className="block bg-brand-600 hover:bg-brand-700 text-white rounded-xl px-5 py-4 transition-colors"
         >
           <p className="text-sm font-bold mb-0.5">退職金・iDeCoの受取設計を税理士に相談 →</p>
           <p className="text-xs opacity-80">{AFFILIATE_LINKS.tax_accountant_dot.label}（相談無料）</p>
@@ -177,7 +177,7 @@ export default function TaishokuResult({ result, onReset }: Props) {
           target="_blank"
           rel="noopener noreferrer sponsored"
           onClick={() => trackEvent('affiliate_click', { key: 'ideco_matsui', diagnosis: 'taishoku_sim' })}
-          className="block bg-white border border-gray-200 hover:border-orange-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
+          className="block bg-white border border-gray-200 hover:border-brand-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
         >
           <p className="text-xs text-gray-500 mb-0.5">PR</p>
           <p className="text-sm font-bold text-gray-800 mb-0.5">iDeCoを始めて老後の節税と資産形成 →</p>
@@ -186,7 +186,7 @@ export default function TaishokuResult({ result, onReset }: Props) {
 
         <Link
           href="/"
-          className="block bg-white border border-gray-200 hover:border-orange-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
+          className="block bg-white border border-gray-200 hover:border-brand-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
         >
           <p className="text-sm font-bold text-gray-800 mb-0.5">全控除をまとめてチェック →</p>
           <p className="text-xs text-gray-500">税金払いすぎ診断（基本版）でiDeCo以外の控除も確認</p>

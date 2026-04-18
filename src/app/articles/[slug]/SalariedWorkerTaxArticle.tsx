@@ -1,12 +1,12 @@
 import Link from 'next/link';
 
 const CTA = ({ label = '無料で診断する →' }: { label?: string }) => (
-  <div className="my-8 bg-blue-600 rounded-2xl px-6 py-5 text-center text-white">
+  <div className="my-8 bg-brand-600 rounded-2xl px-6 py-5 text-center text-white">
     <p className="text-base font-bold mb-1">あなたの控除漏れを3分で診断【無料】</p>
     <p className="text-sm opacity-90 mb-4">年収・家族構成を入力するだけ。見落とし控除を今すぐ確認。</p>
     <Link
       href="/"
-      className="inline-block bg-white text-blue-700 font-bold text-sm px-7 py-2.5 rounded-xl hover:bg-blue-50 transition-colors"
+      className="inline-block bg-white text-brand-700 font-bold text-sm px-7 py-2.5 rounded-xl hover:bg-brand-50 transition-colors"
     >
       {label}
     </Link>
@@ -21,7 +21,7 @@ const InfoBox = ({
   children: React.ReactNode;
 }) => {
   const styles = {
-    tip: 'bg-blue-50 border-blue-200 text-blue-900',
+    tip: 'bg-brand-50 border-brand-200 text-brand-900',
     warn: 'bg-yellow-50 border-yellow-200 text-yellow-900',
     check: 'bg-green-50 border-green-200 text-green-900',
   };
@@ -39,7 +39,7 @@ export default function SalariedWorkerTaxArticle() {
     <article className="max-w-2xl mx-auto px-4 py-8">
       {/* ─── ヘッダー情報 ─── */}
       <div className="mb-3">
-        <span className="text-xs bg-blue-100 text-blue-700 px-2.5 py-0.5 rounded-full font-medium">
+        <span className="text-xs bg-brand-100 text-brand-700 px-2.5 py-0.5 rounded-full font-medium">
           サラリーマン節税
         </span>
       </div>
@@ -73,7 +73,7 @@ export default function SalariedWorkerTaxArticle() {
 
       {/* ─── H2: 基本解説 ─── */}
       <section className="mb-10">
-        <h2 className="text-xl font-extrabold text-gray-900 mt-10 mb-4 border-b-2 border-blue-500 pb-1">
+        <h2 className="text-xl font-extrabold text-gray-900 mt-10 mb-4 border-b-2 border-brand-500 pb-1">
           会社員の節税とは？年末調整と確定申告の違い
         </h2>
         <p className="text-base leading-7 text-gray-700 mb-4">
@@ -85,7 +85,7 @@ export default function SalariedWorkerTaxArticle() {
         <div className="overflow-x-auto my-5">
           <table className="w-full text-sm border-collapse">
             <thead>
-              <tr className="bg-blue-600 text-white">
+              <tr className="bg-brand-600 text-white">
                 <th className="text-left px-3 py-2 rounded-tl-lg">控除の種類</th>
                 <th className="px-3 py-2 text-center">年末調整</th>
                 <th className="px-3 py-2 text-center rounded-tr-lg">確定申告</th>
@@ -108,7 +108,7 @@ export default function SalariedWorkerTaxArticle() {
               ].map(([name, nenmats, kakutei], i) => (
                 <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                   <td className="px-3 py-2 font-medium">{name}</td>
-                  <td className="px-3 py-2 text-center text-blue-600 font-bold">{nenmats}</td>
+                  <td className="px-3 py-2 text-center text-brand-600 font-bold">{nenmats}</td>
                   <td className="px-3 py-2 text-center text-green-600 font-bold">{kakutei}</td>
                 </tr>
               ))}
@@ -124,7 +124,7 @@ export default function SalariedWorkerTaxArticle() {
 
       {/* ─── H2: シミュレーション ─── */}
       <section className="mb-10">
-        <h2 className="text-xl font-extrabold text-gray-900 mt-10 mb-4 border-b-2 border-blue-500 pb-1">
+        <h2 className="text-xl font-extrabold text-gray-900 mt-10 mb-4 border-b-2 border-brand-500 pb-1">
           年収別シミュレーション｜節税14手段をフル活用すると？
         </h2>
         <p className="text-base leading-7 text-gray-700 mb-4">
@@ -135,7 +135,7 @@ export default function SalariedWorkerTaxArticle() {
         <div className="overflow-x-auto my-5">
           <table className="w-full text-sm border-collapse">
             <thead>
-              <tr className="bg-blue-600 text-white">
+              <tr className="bg-brand-600 text-white">
                 <th className="text-left px-3 py-2 rounded-tl-lg">節税手段</th>
                 <th className="px-3 py-2 text-center">年収500万</th>
                 <th className="px-3 py-2 text-center">年収700万</th>
@@ -158,7 +158,7 @@ export default function SalariedWorkerTaxArticle() {
                   <td className="px-3 py-2 text-center">{y1000}</td>
                 </tr>
               ))}
-              <tr className="bg-blue-50 font-bold text-blue-800">
+              <tr className="bg-brand-50 font-bold text-brand-800">
                 <td className="px-3 py-2">合計の目安（主要手段合算）</td>
                 <td className="px-3 py-2 text-center">年間10〜20万円</td>
                 <td className="px-3 py-2 text-center">年間20〜35万円</td>
@@ -178,7 +178,7 @@ export default function SalariedWorkerTaxArticle() {
 
       {/* ─── H2: 14選 ─── */}
       <section className="mb-10">
-        <h2 className="text-xl font-extrabold text-gray-900 mt-10 mb-6 border-b-2 border-blue-500 pb-1">
+        <h2 className="text-xl font-extrabold text-gray-900 mt-10 mb-6 border-b-2 border-brand-500 pb-1">
           節税対策14選｜今すぐ使えるものから解説
         </h2>
 
@@ -396,7 +396,7 @@ export default function SalariedWorkerTaxArticle() {
 
       {/* ─── H2: 注意点 ─── */}
       <section className="mb-10">
-        <h2 className="text-xl font-extrabold text-gray-900 mt-10 mb-4 border-b-2 border-blue-500 pb-1">
+        <h2 className="text-xl font-extrabold text-gray-900 mt-10 mb-4 border-b-2 border-brand-500 pb-1">
           知らないと損する注意点・よくある失敗
         </h2>
         <div className="space-y-4 text-base leading-7 text-gray-700">
@@ -426,7 +426,7 @@ export default function SalariedWorkerTaxArticle() {
 
       {/* ─── H2: FAQ ─── */}
       <section className="mb-10">
-        <h2 className="text-xl font-extrabold text-gray-900 mt-10 mb-4 border-b-2 border-blue-500 pb-1">
+        <h2 className="text-xl font-extrabold text-gray-900 mt-10 mb-4 border-b-2 border-brand-500 pb-1">
           よくある質問
         </h2>
         <div className="space-y-5">
@@ -453,8 +453,8 @@ export default function SalariedWorkerTaxArticle() {
             },
           ].map(({ q, a }, i) => (
             <div key={i} className="border border-gray-200 rounded-xl overflow-hidden">
-              <div className="bg-blue-50 px-5 py-3">
-                <p className="text-base font-bold text-blue-900">Q. {q}</p>
+              <div className="bg-brand-50 px-5 py-3">
+                <p className="text-base font-bold text-brand-900">Q. {q}</p>
               </div>
               <div className="px-5 py-3 text-base text-gray-700 leading-7">
                 <p>A. {a}</p>
@@ -466,7 +466,7 @@ export default function SalariedWorkerTaxArticle() {
 
       {/* ─── H2: まとめ ─── */}
       <section className="mb-10">
-        <h2 className="text-xl font-extrabold text-gray-900 mt-10 mb-4 border-b-2 border-blue-500 pb-1">
+        <h2 className="text-xl font-extrabold text-gray-900 mt-10 mb-4 border-b-2 border-brand-500 pb-1">
           まとめ
         </h2>
         <div className="bg-gray-50 border border-gray-200 rounded-xl px-5 py-4 text-base leading-7 text-gray-700">
@@ -491,9 +491,9 @@ export default function SalariedWorkerTaxArticle() {
             <Link
               key={href}
               href={href}
-              className="block bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-blue-300 transition-colors"
+              className="block bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-brand-300 transition-colors"
             >
-              <p className="text-sm font-semibold text-blue-700">{label}</p>
+              <p className="text-sm font-semibold text-brand-700">{label}</p>
               <p className="text-xs text-gray-500 mt-0.5">{desc}</p>
             </Link>
           ))}

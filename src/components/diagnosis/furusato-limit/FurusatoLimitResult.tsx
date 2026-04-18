@@ -34,7 +34,7 @@ export default function FurusatoLimitResult({ result, input, onReset }: Props) {
   const hasDeductionEffects = iDeCoEffect < 0 || mortgageEffect < 0 || medicalEffect < 0;
 
   const hero = (
-    <div className="rounded-2xl p-6 text-white text-center bg-gradient-to-br from-orange-500 to-amber-600">
+    <div className="rounded-2xl p-6 text-white text-center bg-gradient-to-br from-brand-500 to-amber-600">
       <p className="text-sm opacity-80 mb-1">ふるさと納税の上限額（自己負担2,000円）</p>
       <p className="text-4xl font-extrabold mb-1">約{fmt(limit)}万円</p>
       <p className="text-sm opacity-80">
@@ -68,7 +68,7 @@ export default function FurusatoLimitResult({ result, input, onReset }: Props) {
             <div
               key={i}
               className={`flex justify-between px-4 py-2 ${
-                row.highlight ? 'bg-orange-50 font-bold text-orange-700' : 'bg-white'
+                row.highlight ? 'bg-brand-50 font-bold text-brand-700' : 'bg-white'
               }`}
             >
               <span className={row.bold ? 'font-semibold text-gray-900' : 'text-gray-600'}>
@@ -86,12 +86,12 @@ export default function FurusatoLimitResult({ result, input, onReset }: Props) {
           <h2 className="text-base font-bold text-gray-900 mb-3">⚠️ 他の控除による上限への影響</h2>
           <div className="space-y-2 text-sm">
             {iDeCoEffect < 0 && (
-              <div className="flex items-start gap-2 p-3 bg-blue-50 rounded-lg">
-                <span className="text-blue-600 font-bold mt-0.5">↓</span>
+              <div className="flex items-start gap-2 p-3 bg-brand-50 rounded-lg">
+                <span className="text-brand-600 font-bold mt-0.5">↓</span>
                 <div>
-                  <span className="font-semibold text-blue-800">iDeCo年額{fmt(input.iDeCoMonthly * 12, 1)}万円の影響: </span>
-                  <span className="text-blue-700">上限が約{Math.abs(iDeCoEffect)}万円下がっています</span>
-                  <p className="text-xs text-blue-500 mt-1">iDeCoは節税効果の方がはるかに大きいので継続推奨です</p>
+                  <span className="font-semibold text-brand-800">iDeCo年額{fmt(input.iDeCoMonthly * 12, 1)}万円の影響: </span>
+                  <span className="text-brand-700">上限が約{Math.abs(iDeCoEffect)}万円下がっています</span>
+                  <p className="text-xs text-brand-500 mt-1">iDeCoは節税効果の方がはるかに大きいので継続推奨です</p>
                 </div>
               </div>
             )}
@@ -132,7 +132,7 @@ export default function FurusatoLimitResult({ result, input, onReset }: Props) {
                   href={tip.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-blue-500 mt-1 block hover:underline"
+                  className="text-xs text-brand-500 mt-1 block hover:underline"
                 >
                   出典: {tip.source}
                 </a>
@@ -151,7 +151,7 @@ export default function FurusatoLimitResult({ result, input, onReset }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackEvent('affiliate_click', { key: furusona.key, diagnosis: 'furusato-limit' })}
-            className="flex flex-col gap-1 p-4 rounded-xl bg-orange-500 text-white hover:bg-orange-600 transition-colors"
+            className="flex flex-col gap-1 p-4 rounded-xl bg-brand-500 text-white hover:bg-brand-600 transition-colors"
           >
             <span className="font-bold text-base">上限額がわかったら返礼品を選ぶ →</span>
             <span className="text-sm opacity-90">fursonaでAIが最適な返礼品を提案</span>
@@ -162,13 +162,13 @@ export default function FurusatoLimitResult({ result, input, onReset }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackEvent('affiliate_click', { key: 'furusato_satofuru', diagnosis: 'furusato-limit' })}
-            className="flex flex-col gap-1 p-4 rounded-xl border-2 border-orange-200 text-orange-700 hover:bg-orange-50 transition-colors"
+            className="flex flex-col gap-1 p-4 rounded-xl border-2 border-brand-200 text-brand-700 hover:bg-brand-50 transition-colors"
           >
             <span className="font-bold text-base">
-              <span className="text-xs font-normal bg-orange-100 text-orange-600 px-1.5 py-0.5 rounded mr-1">PR</span>
+              <span className="text-xs font-normal bg-brand-100 text-brand-600 px-1.5 py-0.5 rounded mr-1">PR</span>
               さとふるでふるさと納税をする →
             </span>
-            <span className="text-sm text-orange-600">返礼品が豊富・手続き簡単</span>
+            <span className="text-sm text-brand-600">返礼品が豊富・手続き簡単</span>
           </a>
 
           {input.iDeCoMonthly === 0 && (

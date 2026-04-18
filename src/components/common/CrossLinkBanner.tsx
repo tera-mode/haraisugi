@@ -24,11 +24,11 @@ export default function CrossLinkBanner({ links, heading = 'こちらの診断�
           <Link
             key={link.href}
             href={link.href}
-            className="flex items-center gap-3 bg-white rounded-xl border border-gray-200 px-4 py-3 hover:border-blue-300 hover:shadow-sm transition-all"
+            className="flex items-center gap-3 bg-white rounded-xl border border-gray-200 px-4 py-3 hover:border-brand-300 hover:shadow-sm transition-all"
           >
             <span className="text-2xl">{link.icon}</span>
             <span className="text-sm font-medium text-gray-800 flex-1">{link.label}</span>
-            <span className="text-blue-500 text-sm">→</span>
+            <span className="text-brand-500 text-sm">→</span>
           </Link>
         ))}
       </div>

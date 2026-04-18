@@ -42,7 +42,7 @@ export default function FudousanResult({ result, salePrice, onReset }: Props) {
         ? 'bg-gradient-to-br from-gray-500 to-gray-700'
         : taxAfterDeduction === 0
         ? 'bg-gradient-to-br from-green-500 to-green-700'
-        : 'bg-gradient-to-br from-teal-600 to-teal-800'
+        : 'bg-gradient-to-br from-brand-600 to-brand-800'
     }`}>
       {isLoss ? (
         <>
@@ -98,7 +98,7 @@ export default function FudousanResult({ result, salePrice, onReset }: Props) {
             <div
               key={i}
               className={`flex justify-between px-4 py-2 ${
-                row.highlight ? 'bg-teal-50 font-bold text-teal-700' : 'bg-white'
+                row.highlight ? 'bg-brand-50 font-bold text-brand-700' : 'bg-white'
               }`}
             >
               <span className={row.bold ? 'font-semibold text-gray-900' : 'text-gray-600'}>
@@ -142,9 +142,9 @@ export default function FudousanResult({ result, salePrice, onReset }: Props) {
 
       {/* 損益通算 */}
       {isLoss && canCarryLoss && (
-        <div className="mt-4 p-4 bg-blue-50 rounded-xl text-sm">
-          <p className="font-bold text-blue-800 mb-1">💡 損益通算・繰越控除が使えます</p>
-          <p className="text-blue-700">
+        <div className="mt-4 p-4 bg-brand-50 rounded-xl text-sm">
+          <p className="font-bold text-brand-800 mb-1">💡 損益通算・繰越控除が使えます</p>
+          <p className="text-brand-700">
             マイホームの売却損は、給与所得等の他の所得と損益通算でき、
             控除しきれない損失は翌年以降3年間繰り越せます（確定申告が必要）。
           </p>
@@ -165,7 +165,7 @@ export default function FudousanResult({ result, salePrice, onReset }: Props) {
                     href={tip.sourceUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-blue-500 mt-1 block hover:underline"
+                    className="text-xs text-brand-500 mt-1 block hover:underline"
                   >
                     出典: {tip.source}
                   </a>
@@ -185,7 +185,7 @@ export default function FudousanResult({ result, salePrice, onReset }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackEvent('affiliate_click', { key: taxAccountant.key, diagnosis: 'fudousan-baikyaku' })}
-            className="flex flex-col gap-1 p-4 rounded-xl bg-teal-600 text-white hover:bg-teal-700 transition-colors"
+            className="flex flex-col gap-1 p-4 rounded-xl bg-brand-600 text-white hover:bg-brand-700 transition-colors"
           >
             <span className="font-bold text-base">税理士に相談して申告を確実にする →</span>
             <span className="text-sm opacity-90">税理士ドットコムで無料相談（相談無料）</span>
@@ -196,13 +196,13 @@ export default function FudousanResult({ result, salePrice, onReset }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackEvent('affiliate_click', { key: realEstateQuery.key, diagnosis: 'fudousan-baikyaku' })}
-            className="flex flex-col gap-1 p-4 rounded-xl border-2 border-teal-200 text-teal-700 hover:bg-teal-50 transition-colors"
+            className="flex flex-col gap-1 p-4 rounded-xl border-2 border-brand-200 text-brand-700 hover:bg-brand-50 transition-colors"
           >
             <span className="font-bold text-base">
-              <span className="text-xs font-normal bg-teal-100 text-teal-600 px-1.5 py-0.5 rounded mr-1">PR</span>
+              <span className="text-xs font-normal bg-brand-100 text-brand-600 px-1.5 py-0.5 rounded mr-1">PR</span>
               不動産一括査定で売却価格の相場を確認する →
             </span>
-            <span className="text-sm text-teal-600">イエウールで複数社の査定額を比較</span>
+            <span className="text-sm text-brand-600">イエウールで複数社の査定額を比較</span>
           </a>
 
           <Link

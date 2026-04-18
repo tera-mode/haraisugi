@@ -21,7 +21,7 @@ export default function DiagnosisMenuCard({
     <div
       className={`bg-white rounded-2xl border p-5 flex gap-4 items-start transition-all ${
         available
-          ? 'border-gray-200 hover:border-blue-300 hover:shadow-md cursor-pointer'
+          ? 'border-gray-200 hover:border-brand-300 hover:shadow-md cursor-pointer'
           : 'border-gray-100 opacity-60 cursor-default'
       }`}
     >
@@ -37,7 +37,7 @@ export default function DiagnosisMenuCard({
         <p className="text-xs text-gray-400 mt-2">対象: {target}</p>
       </div>
       {available && (
-        <div className="text-blue-500 text-sm flex-shrink-0">→</div>
+        <div className="text-brand-500 text-sm flex-shrink-0">→</div>
       )}
     </div>
   );
