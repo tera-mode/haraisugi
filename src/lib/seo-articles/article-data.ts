@@ -83,7 +83,7 @@ export const staticArticles: Record<string, StaticArticle> = {
   },
   '50dai-taishoku-setsuzei-checklist': {
     slug: '50dai-taishoku-setsuzei-checklist',
-    title: '50代で退職する前にやるべき節税準備チェックリスト',
+    title: '50代の退職準備チェックリスト｜退職金・iDeCo・健康保険の節税ポイント',
     description: '50代で退職を考えている方向け。退職金・iDeCo・年金の受取順序・健康保険の切り替えなど、退職前にやるべき節税準備を完全チェックリスト化。',
     category: '退職・年金',
     publishedAt: '2026-04-07',

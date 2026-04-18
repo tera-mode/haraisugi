@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { collection, getDocs, query, orderBy } from 'firebase/firestore';
+import { db } from '@/lib/firebase/client';
 import { getPublishedStaticArticles } from '@/lib/seo-articles/article-data';
+
+export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: '節税コラム一覧｜税金払いすぎ診断',
@@ -10,6 +14,26 @@ export const metadata: Metadata = {
     canonical: 'https://haraisugi.jp/column',
   },
 };
+
+type ArticleItem = {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  publishedAt: string;
+};
+
+async function getFirestoreArticles(staticSlugs: Set<string>): Promise<ArticleItem[]> {
+  try {
+    const q = query(collection(db, 'articles'), orderBy('publishedAt', 'desc'));
+    const snap = await getDocs(q);
+    return snap.docs
+      .map(doc => doc.data() as ArticleItem)
+      .filter(a => a.slug && !staticSlugs.has(a.slug));
+  } catch {
+    return [];
+  }
+}
 
 const CATEGORY_ORDER = [
   'サラリーマン節税',
@@ -35,14 +59,20 @@ const CATEGORY_ORDER = [
   '還付申告',
   '退職・年金',
   'フリーランス節税',
+  '相続税',
+  '不動産',
 ];
 
-export default function ColumnPage() {
-  const articles = getPublishedStaticArticles();
+export default async function ColumnPage() {
+  const staticArticles = getPublishedStaticArticles();
+  const staticSlugs = new Set(staticArticles.map(a => a.slug));
+  const firestoreArticles = await getFirestoreArticles(staticSlugs);
+
+  const allArticles: ArticleItem[] = [...staticArticles, ...firestoreArticles];
 
   // カテゴリ別にグループ化
-  const grouped: Record<string, typeof articles> = {};
-  for (const a of articles) {
+  const grouped: Record<string, ArticleItem[]> = {};
+  for (const a of allArticles) {
     if (!grouped[a.category]) grouped[a.category] = [];
     grouped[a.category].push(a);
   }
@@ -61,7 +91,7 @@ export default function ColumnPage() {
       <div className="mb-8">
         <h1 className="text-2xl font-extrabold text-gray-900 mb-2">節税コラム一覧</h1>
         <p className="text-sm text-gray-600">
-          会社員・フリーランス・共働き夫婦の節税・確定申告に役立つ記事を{articles.length}本掲載。
+          会社員・フリーランス・共働き夫婦の節税・確定申告に役立つ記事を{allArticles.length}本掲載。
           知らないと損する控除を今すぐチェック。
         </p>
       </div>
