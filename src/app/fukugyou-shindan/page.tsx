@@ -4,7 +4,7 @@ import NicheDiagnosisPageShell from '@/components/diagnosis/shared/NicheDiagnosi
 import FukugyouForm from '@/components/diagnosis/fukugyou-shindan/FukugyouForm';
 
 export const metadata = buildPageMetadata({
-  title: '副業の確定申告、あなたは必要？事業所得vs雑所得も判定',
+  title: '副業 払いすぎ診断｜副業の確定申告・節税ポイント自動判定',
   description:
     '副業の種類・収入額・経費を入力するだけで、確定申告の要否・所得区分・最適な申告方法を自動判定。住民税の申告義務や損益通算・青色申告特別控除も診断。',
   path: '/fukugyou-shindan',
@@ -12,7 +12,7 @@ export const metadata = buildPageMetadata({
 
 export default function FukugyouShindanPage() {
   const ld = getNicheDiagnosisLD({
-    name: '副業の確定申告 要否・最適申告判定',
+    name: '副業 払いすぎ診断',
     description: '副業の種類・収入額・経費を入力するだけで、確定申告の要否・所得区分・最適な申告方法を自動判定。',
     path: '/fukugyou-shindan',
   });

@@ -198,7 +198,7 @@ export default function FurusatoLimitResult({ result, input, onReset }: Props) {
       <CrossLinkBanner
         links={[
           { href: '/', icon: '🧾', label: '税金払いすぎ診断（基本版）' },
-          { href: '/tomobataraki', icon: '👨‍👩‍👧', label: '共働き控除最適配分診断' },
+          { href: '/tomobataraki', icon: '👨‍👩‍👧', label: '共働き 損してる診断' },
         ]}
       />
 

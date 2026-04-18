@@ -124,7 +124,7 @@ export default function TomobatarakiForm() {
 
   return (
     <DiagnosisShell
-      title="共働き世帯の扶養・控除 最適配分診断"
+      title="共働き 損してる診断"
       subtitle="夫婦の年収・子の年齢・保険加入状況を入力して、扶養控除の最適な振り分けを提案します"
       step={step}
       totalSteps={TOTAL_STEPS}

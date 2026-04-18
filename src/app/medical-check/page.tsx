@@ -4,7 +4,7 @@ import NicheDiagnosisPageShell from '@/components/diagnosis/shared/NicheDiagnosi
 import MedicalCheckForm from '@/components/diagnosis/medical-check/MedicalCheckForm';
 
 export const metadata = buildPageMetadata({
-  title: '医療費控除とセルフメディケーション税制どっちが得？自動判定ツール',
+  title: '医療費 取り戻し診断｜医療費控除とセルフメディケーション税制どっちが得？',
   description:
     '年間の医療費とOTC医薬品購入額を入力するだけで、あなたに有利な制度を自動判定。還付額の差額まで計算します。',
   path: '/medical-check',
@@ -12,7 +12,7 @@ export const metadata = buildPageMetadata({
 
 export default function MedicalCheckPage() {
   const ld = getNicheDiagnosisLD({
-    name: '医療費控除 vs セルフメディケーション判定ツール',
+    name: '医療費 取り戻し診断',
     description: '年間の医療費とOTC医薬品購入額を入力するだけで、あなたに有利な制度を自動判定。還付額の差額まで計算します。',
     path: '/medical-check',
   });

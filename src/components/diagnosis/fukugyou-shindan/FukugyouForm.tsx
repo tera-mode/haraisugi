@@ -98,7 +98,7 @@ export default function FukugyouForm() {
 
   return (
     <DiagnosisShell
-      title="副業の確定申告 要否・最適申告判定"
+      title="副業 払いすぎ診断"
       subtitle="副業の種類・収入・経費を入力して、確定申告の要否と最適な申告方法を診断します"
       step={step}
       totalSteps={TOTAL_STEPS}

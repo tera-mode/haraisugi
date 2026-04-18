@@ -87,7 +87,7 @@ export default function FurusatoLimitForm() {
 
   return (
     <DiagnosisShell
-      title="ふるさと納税 上限額シミュレーション"
+      title="ふるさと納税 損してる診断"
       subtitle="iDeCo・住宅ローン控除・医療費控除の影響を加味した正確な上限額を計算します"
       stepLabels={STEP_LABELS}
       step={step}

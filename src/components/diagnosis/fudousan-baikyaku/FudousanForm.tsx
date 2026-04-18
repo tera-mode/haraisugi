@@ -99,7 +99,7 @@ export default function FudousanForm() {
 
   return (
     <DiagnosisShell
-      title="不動産売却 税金シミュレーション"
+      title="マイホーム売却 取られすぎ診断"
       subtitle="売却価格・取得費・居住状況から、譲渡所得税と使える特例を自動診断します"
       stepLabels={STEP_LABELS}
       step={step}

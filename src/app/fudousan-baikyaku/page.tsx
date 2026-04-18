@@ -4,7 +4,7 @@ import NicheDiagnosisPageShell from '@/components/diagnosis/shared/NicheDiagnosi
 import FudousanForm from '@/components/diagnosis/fudousan-baikyaku/FudousanForm';
 
 export const metadata = buildPageMetadata({
-  title: '不動産を売ったら税金いくら？特例で0円にできるか診断',
+  title: 'マイホーム売却 取られすぎ診断｜譲渡所得税・3000万円特別控除の判定',
   description:
     '売却額・取得費・所有期間・居住状況を入力するだけで、譲渡所得税の概算と適用可能な特例を自動判定。3,000万円特別控除・10年超軽減税率・相続不動産の取得費加算も対応。',
   path: '/fudousan-baikyaku',
@@ -12,7 +12,7 @@ export const metadata = buildPageMetadata({
 
 export default function FudousanBaikyakuPage() {
   const ld = getNicheDiagnosisLD({
-    name: '不動産売却 税金シミュレーション',
+    name: 'マイホーム売却 取られすぎ診断',
     description:
       '売却額・取得費・所有期間・居住状況から、譲渡所得税の概算と適用可能な特例を自動診断します。',
     path: '/fudousan-baikyaku',

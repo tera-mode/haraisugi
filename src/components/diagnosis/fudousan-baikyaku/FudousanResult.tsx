@@ -210,7 +210,7 @@ export default function FudousanResult({ result, salePrice, onReset }: Props) {
             className="flex flex-col gap-1 p-4 rounded-xl border border-gray-200 text-gray-700 hover:bg-gray-50 transition-colors"
           >
             <span className="font-bold">相続した不動産の相続税も確認する →</span>
-            <span className="text-sm text-gray-500">相続税かんたん試算で相続税額をシミュレーション</span>
+            <span className="text-sm text-gray-500">相続税 取られすぎ診断で相続税額をシミュレーション</span>
           </Link>
         </div>
       </div>
@@ -218,7 +218,7 @@ export default function FudousanResult({ result, salePrice, onReset }: Props) {
       {/* 回遊バナー */}
       <CrossLinkBanner
         links={[
-          { href: '/souzoku', icon: '🏠', label: '相続税 かんたん試算' },
+          { href: '/souzoku', icon: '🏠', label: '相続税 取られすぎ診断' },
           { href: '/', icon: '🧾', label: '税金払いすぎ診断（基本版）' },
         ]}
       />

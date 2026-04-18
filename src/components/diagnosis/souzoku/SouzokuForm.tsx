@@ -84,7 +84,7 @@ export default function SouzokuForm() {
 
   return (
     <DiagnosisShell
-      title="相続税 かんたん試算"
+      title="相続税 取られすぎ診断"
       subtitle="財産と相続人の構成を入力して、相続税の概算と節税対策を診断します"
       step={step}
       totalSteps={TOTAL_STEPS}

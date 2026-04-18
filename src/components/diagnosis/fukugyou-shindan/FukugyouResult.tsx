@@ -226,7 +226,7 @@ export default function FukugyouResult({ result, onReset }: Props) {
       <CrossLinkBanner
         links={[
           { href: '/', icon: '🧾', label: '税金払いすぎ診断（基本版）', available: true },
-          { href: '/medical-check', icon: '💊', label: '医療費控除 vs セルフメディケーション', available: true },
+          { href: '/medical-check', icon: '💊', label: '医療費 取り戻し診断', available: true },
           { href: '/tools', icon: '🗂️', label: '節税診断メニューをすべて見る', available: true },
         ]}
       />

@@ -197,7 +197,7 @@ export default function TaishokuResult({ result, onReset }: Props) {
       <CrossLinkBanner
         links={[
           { href: '/', icon: '🧾', label: '税金払いすぎ診断（基本版）', available: true },
-          { href: '/tomobataraki', icon: '👨‍👩‍👧', label: '共働き世帯の扶養・控除 最適配分診断', available: true },
+          { href: '/tomobataraki', icon: '👨‍👩‍👧', label: '共働き 損してる診断', available: true },
           { href: '/tools', icon: '🗂️', label: '節税診断メニューをすべて見る', available: true },
         ]}
       />

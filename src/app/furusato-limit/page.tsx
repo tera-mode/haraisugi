@@ -4,7 +4,7 @@ import NicheDiagnosisPageShell from '@/components/diagnosis/shared/NicheDiagnosi
 import FurusatoLimitForm from '@/components/diagnosis/furusato-limit/FurusatoLimitForm';
 
 export const metadata = buildPageMetadata({
-  title: 'ふるさと納税の本当の上限額は？iDeCo・住宅ローン控除を加味して正確計算',
+  title: 'ふるさと納税 損してる診断｜iDeCo・住宅ローン控除を加味した正確な上限額計算',
   description:
     '他の控除（iDeCo・住宅ローン控除・医療費控除）を加味した正確なふるさと納税上限額を計算。多くの簡易計算機では考慮されない併用影響を反映。',
   path: '/furusato-limit',
@@ -12,7 +12,7 @@ export const metadata = buildPageMetadata({
 
 export default function FurusatoLimitPage() {
   const ld = getNicheDiagnosisLD({
-    name: 'ふるさと納税 上限額シミュレーション（控除併用対応）',
+    name: 'ふるさと納税 損してる診断',
     description:
       'iDeCo・住宅ローン控除・医療費控除を加味した正確なふるさと納税上限額を計算します。',
     path: '/furusato-limit',

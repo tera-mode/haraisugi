@@ -4,7 +4,7 @@ import NicheDiagnosisPageShell from '@/components/diagnosis/shared/NicheDiagnosi
 import TaishokuForm from '@/components/diagnosis/taishoku-sim/TaishokuForm';
 
 export const metadata = buildPageMetadata({
-  title: '退職金とiDeCo、一括？年金？あなたの最適な受取方法を診断',
+  title: '退職金 取られすぎ診断｜退職金・iDeCoの最適な受取方法をシミュレーション',
   description:
     '勤続年数・退職金額・iDeCo残高を入力して、一時金・年金・時間差受取の3パターンの税額を自動比較。5年ルール・19年ルールも解説。',
   path: '/taishoku-sim',
@@ -12,7 +12,7 @@ export const metadata = buildPageMetadata({
 
 export default function TaishokuSimPage() {
   const ld = getNicheDiagnosisLD({
-    name: '退職金・iDeCo 受取戦略シミュレーション',
+    name: '退職金 取られすぎ診断',
     description: '勤続年数・退職金額・iDeCo残高を入力して、一時金・年金・時間差受取の3パターンの税額を自動比較。',
     path: '/taishoku-sim',
   });

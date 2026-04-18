@@ -84,7 +84,7 @@ export default function MedicalCheckForm() {
 
   return (
     <DiagnosisShell
-      title="医療費控除 vs セルフメディケーション判定"
+      title="医療費 取り戻し診断"
       subtitle="年間の医療費とOTC医薬品購入額を入力して、どちらが有利か自動判定します"
       step={step}
       totalSteps={TOTAL_STEPS}

@@ -195,7 +195,7 @@ export default function SouzokuResult({ result, onReset }: Props) {
           className="block bg-white border border-gray-200 hover:border-brand-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
         >
           <p className="text-sm font-bold text-gray-800 mb-0.5">退職金の受取方法も最適化する →</p>
-          <p className="text-xs text-gray-500">退職金・iDeCo受取戦略シミュレーションで老後設計を確認</p>
+          <p className="text-xs text-gray-500">退職金 取られすぎ診断で老後設計を確認</p>
         </Link>
 
         <Link
@@ -210,9 +210,9 @@ export default function SouzokuResult({ result, onReset }: Props) {
       {/* 回遊バナー */}
       <CrossLinkBanner
         links={[
-          { href: '/fudousan-baikyaku', icon: '🏘️', label: '不動産売却 税金シミュレーション', available: false },
+          { href: '/fudousan-baikyaku', icon: '🏘️', label: 'マイホーム売却 取られすぎ診断', available: false },
           { href: '/', icon: '🧾', label: '税金払いすぎ診断（基本版）', available: true },
-          { href: '/taishoku-sim', icon: '🏖️', label: '退職金・iDeCo 受取戦略シミュレーション', available: true },
+          { href: '/taishoku-sim', icon: '🏖️', label: '退職金 取られすぎ診断', available: true },
         ]}
       />
 

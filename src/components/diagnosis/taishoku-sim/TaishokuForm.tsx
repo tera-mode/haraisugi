@@ -83,7 +83,7 @@ export default function TaishokuForm() {
 
   return (
     <DiagnosisShell
-      title="退職金・iDeCo 受取戦略シミュレーション"
+      title="退職金 取られすぎ診断"
       subtitle="受取方法を変えるだけで税額が大きく変わります。3パターンを自動比較します"
       step={step}
       totalSteps={TOTAL_STEPS}
