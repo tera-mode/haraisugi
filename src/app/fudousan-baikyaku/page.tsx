@@ -6,7 +6,7 @@ import FudousanForm from '@/components/diagnosis/fudousan-baikyaku/FudousanForm'
 export const metadata = buildPageMetadata({
   title: 'マイホーム売却 取られすぎ診断｜譲渡所得税・3000万円特別控除の判定',
   description:
-    '売却額・取得費・所有期間・居住状況を入力するだけで、譲渡所得税の概算と適用可能な特例を自動判定。3,000万円特別控除・10年超軽減税率・相続不動産の取得費加算も対応。',
+    '無料・登録不要。売却額・取得費・所有期間・居住状況を入力するだけで、譲渡所得税の概算と適用可能な特例を自動判定。3,000万円特別控除・10年超軽減税率も対応。',
   path: '/fudousan-baikyaku',
 });
 

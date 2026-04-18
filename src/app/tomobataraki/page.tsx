@@ -6,7 +6,7 @@ import TomobatarakiForm from '@/components/diagnosis/tomobataraki/TomobatarakiFo
 export const metadata = buildPageMetadata({
   title: '共働き 損してる診断｜扶養・控除の最適配分で年末調整の損を回避',
   description:
-    '夫婦の年収・子の年齢・保険加入状況を入力するだけで、扶養控除を夫婦どちらに入れると得かを自動診断。年間数万円の節税につながるケースも。',
+    '無料・登録不要。夫婦の年収・子の年齢・保険加入状況を入力するだけで、扶養控除を夫婦どちらに入れると得かを自動診断。年間数万円の節税につながるケースも。',
   path: '/tomobataraki',
 });
 

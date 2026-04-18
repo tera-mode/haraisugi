@@ -6,7 +6,7 @@ import SouzokuForm from '@/components/diagnosis/souzoku/SouzokuForm';
 export const metadata = buildPageMetadata({
   title: '相続税 取られすぎ診断｜うちは相続税かかる？3分で試算',
   description:
-    '相続人の構成と財産の概算を入力するだけで、相続税の概算額と使える特例・控除を自動診断。基礎控除・配偶者軽減・小規模宅地特例・生命保険非課税枠も考慮。',
+    '無料・登録不要。相続人の構成と財産の概算を入力するだけで、相続税の概算額と使える特例・控除を自動診断。基礎控除・配偶者軽減・小規模宅地特例も考慮。',
   path: '/souzoku',
 });
 

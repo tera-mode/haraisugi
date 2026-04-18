@@ -37,7 +37,8 @@ export default function HomePage() {
         <div>
           <h2 className="text-base font-bold text-gray-900 mb-3">税金払いすぎ診断とは？</h2>
           <p className="leading-relaxed">
-            年収・家族構成・ライフスタイルを入力するだけで、あなたが見逃している控除と節税テクニックを無料で診断するツールです。
+            年収・家族構成・ライフスタイルを入力するだけで、あなたが見逃している控除と節税テクニックを診断するツールです。
+            <strong>完全無料・登録不要で、約3分で診断が完了します。</strong>
             医療費控除・ふるさと納税・iDeCo・扶養控除など、申請しなければ自動的には戻ってこない控除を自動で洗い出します。
           </p>
         </div>

@@ -24,6 +24,9 @@ export default function NicheDiagnosisPageShell({ ld, children, seoContent }: Pr
         {children}
         {seoContent && (
           <section className="mt-16 space-y-10 text-sm text-gray-700">
+            <p className="text-xs text-gray-500 pb-4 border-b border-gray-100">
+              本ツールは<strong className="text-gray-700">無料・登録不要</strong>でご利用いただけます。回答に要する時間は約30秒〜3分です。
+            </p>
             {seoContent}
           </section>
         )}

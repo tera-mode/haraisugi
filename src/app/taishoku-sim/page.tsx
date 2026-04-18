@@ -6,7 +6,7 @@ import TaishokuForm from '@/components/diagnosis/taishoku-sim/TaishokuForm';
 export const metadata = buildPageMetadata({
   title: '退職金 取られすぎ診断｜退職金・iDeCoの最適な受取方法をシミュレーション',
   description:
-    '勤続年数・退職金額・iDeCo残高を入力して、一時金・年金・時間差受取の3パターンの税額を自動比較。5年ルール・19年ルールも解説。',
+    '無料・登録不要。勤続年数・退職金額・iDeCo残高を入力して、一時金・年金・時間差受取の3パターンの税額を自動比較。5年ルール・19年ルールも解説。',
   path: '/taishoku-sim',
 });
 

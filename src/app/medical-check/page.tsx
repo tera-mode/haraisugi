@@ -6,7 +6,7 @@ import MedicalCheckForm from '@/components/diagnosis/medical-check/MedicalCheckF
 export const metadata = buildPageMetadata({
   title: '医療費 取り戻し診断｜医療費控除とセルフメディケーション税制どっちが得？',
   description:
-    '年間の医療費とOTC医薬品購入額を入力するだけで、あなたに有利な制度を自動判定。還付額の差額まで計算します。',
+    '無料・登録不要。年間の医療費とOTC医薬品購入額を入力するだけで、あなたに有利な制度を自動判定。還付額の差額まで計算します。',
   path: '/medical-check',
 });
 

@@ -6,7 +6,7 @@ import FukugyouForm from '@/components/diagnosis/fukugyou-shindan/FukugyouForm';
 export const metadata = buildPageMetadata({
   title: '副業 払いすぎ診断｜副業の確定申告・節税ポイント自動判定',
   description:
-    '副業の種類・収入額・経費を入力するだけで、確定申告の要否・所得区分・最適な申告方法を自動判定。住民税の申告義務や損益通算・青色申告特別控除も診断。',
+    '無料・登録不要。副業の種類・収入額・経費を入力するだけで、確定申告の要否・所得区分・最適な申告方法を自動判定。損益通算・青色申告特別控除も診断。',
   path: '/fukugyou-shindan',
 });
 
