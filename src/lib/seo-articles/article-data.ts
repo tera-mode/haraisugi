@@ -88,7 +88,7 @@ export const staticArticles: Record<string, StaticArticle> = {
     category: '退職・年金',
     publishedAt: '2026-04-07',
     updatedAt: '2026-04-07',
-    published: true,
+    published: false, // 重複統合: → /articles/taishoku-mae-setsuzei-checklist (next.config.ts で 301)
   },
   'nenmatsu-chosei-sonhinai-7kojo': {
     slug: 'nenmatsu-chosei-sonhinai-7kojo',
@@ -106,7 +106,7 @@ export const staticArticles: Record<string, StaticArticle> = {
     category: '医療費控除',
     publishedAt: '2026-04-07',
     updatedAt: '2026-04-07',
-    published: true,
+    published: false, // 重複統合: → /articles/iryouhi-koujo-urawaza (next.config.ts で 301)
   },
   'iryohi-kojo-ikura-modoru': {
     slug: 'iryohi-kojo-ikura-modoru',
@@ -160,7 +160,7 @@ export const staticArticles: Record<string, StaticArticle> = {
     category: 'セルフメディケーション',
     publishedAt: '2026-04-07',
     updatedAt: '2026-04-07',
-    published: true,
+    published: false, // 重複統合: → /articles/iryouhi-self-medication-hikaku (next.config.ts で 301)
   },
   'fukugyou-akaji-soneki-tsusan': {
     slug: 'fukugyou-akaji-soneki-tsusan',
@@ -178,7 +178,7 @@ export const staticArticles: Record<string, StaticArticle> = {
     category: '副業・確定申告',
     publishedAt: '2026-04-07',
     updatedAt: '2026-04-07',
-    published: true,
+    published: false, // 重複統合: → /articles/fukugyou-20man-rule (next.config.ts で 301)
   },
   // Phase 2: 共働き クラスター追加分
   'pair-loan-setsuzei': {
@@ -297,7 +297,7 @@ export const staticArticles: Record<string, StaticArticle> = {
     category: 'iDeCo・退職',
     publishedAt: '2026-04-08',
     updatedAt: '2026-04-08',
-    published: true,
+    published: false, // 重複統合: → /articles/taishoku-ideco-saiteki (next.config.ts で 301)
   },
   'zaitaku-kinmu-kojo': {
     slug: 'zaitaku-kinmu-kojo',
@@ -369,7 +369,7 @@ export const staticArticles: Record<string, StaticArticle> = {
     category: 'セルフメディケーション',
     publishedAt: '2026-04-08',
     updatedAt: '2026-04-08',
-    published: true,
+    published: false, // 重複統合: → /articles/self-medication-taishou-list (next.config.ts で 301)
   },
   'fukugyou-keihi-dokomade': {
     slug: 'fukugyou-keihi-dokomade',
@@ -378,7 +378,7 @@ export const staticArticles: Record<string, StaticArticle> = {
     category: '副業・確定申告',
     publishedAt: '2026-04-08',
     updatedAt: '2026-04-08',
-    published: true,
+    published: false, // 重複統合: → /articles/fukugyou-keihi-ichiran (next.config.ts で 301)
   },
   'aoiro-shinkoku-65man': {
     slug: 'aoiro-shinkoku-65man',
@@ -432,7 +432,7 @@ export const staticArticles: Record<string, StaticArticle> = {
     category: '退職・年金',
     publishedAt: '2026-04-08',
     updatedAt: '2026-04-08',
-    published: true,
+    published: false, // 重複統合: → /articles/taishokukin-zeikin-keisan (スラッグ綴り修正 / next.config.ts で 301)
   },
   'ideco-nisa-docchi': {
     slug: 'ideco-nisa-docchi',
