@@ -41,9 +41,9 @@ function buildCTAs(result: DiagnosisResult, input: UserInput): CTAItem[] {
 
   if (deductionIds.includes('life_insurance')) {
     ctas.push({
-      key: 'insurance_review',
+      key: 'insurance_mitsumoto',
       heading: '保険の見直しで節税＋保障を最適化',
-      desc: '保険見直しラボで無料相談。生命保険料控除の枠を最大限活用できます。',
+      desc: '保険見直し本舗の無料相談は全国対応・何度でも無料。生命保険料控除の枠を最大限活用できます。',
       free: true,
     });
   }
@@ -53,9 +53,9 @@ function buildCTAs(result: DiagnosisResult, input: UserInput): CTAItem[] {
   );
   if (hasComplex) {
     ctas.push({
-      key: 'tax_accountant_dot',
+      key: 'tax_accountant_keiei',
       heading: '複雑な控除は税理士に相談',
-      desc: '税理士ドットコムで無料相談。特定支出控除や損益通算は専門家に任せると確実です。',
+      desc: '会社設立・法人化も含む税務相談なら税理士法人経営サポートプラスアルファへ。初回無料で対応。',
       free: true,
     });
   }
