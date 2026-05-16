@@ -5,8 +5,7 @@ import ComparisonTable from '@/components/diagnosis/shared/ComparisonTable';
 import ResultLayout from '@/components/diagnosis/shared/ResultLayout';
 import CrossLinkBanner from '@/components/common/CrossLinkBanner';
 import type { MedicalCheckResult } from '@/lib/diagnosis/medical-check/types';
-import { trackEvent } from '@/lib/analytics';
-import { AFFILIATE_LINKS } from '@/lib/affiliate/links';
+import AffiliateCTACard from '@/components/common/AffiliateCTACard';
 
 type Props = {
   result: MedicalCheckResult;
@@ -143,31 +142,19 @@ export default function MedicalResult({ result, onReset }: Props) {
           <p className="text-xs opacity-80">税金払いすぎ診断（基本版）で医療費控除以外の控除も一括確認</p>
         </Link>
 
-        {/* 保険見直しCTA */}
-        <a
-          href={AFFILIATE_LINKS.insurance_review.url}
-          target="_blank"
-          rel="noopener noreferrer sponsored"
-          onClick={() => trackEvent('affiliate_click', { key: 'insurance_review', diagnosis: 'medical_check' })}
-          className="block bg-white border border-gray-200 hover:border-brand-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
-        >
-          <p className="text-xs text-gray-500 mb-0.5">PR</p>
-          <p className="text-sm font-bold text-gray-800 mb-0.5">保険見直しで医療費リスクを下げる →</p>
-          <p className="text-xs text-gray-500">{AFFILIATE_LINKS.insurance_review.label}（無料）</p>
-        </a>
+        <AffiliateCTACard
+          linkKey="insurance_mitsumoto"
+          heading="保険見直しで医療費リスクを下げる →"
+          desc="保険見直し本舗で無料相談（全国対応・何度でも無料）"
+          diagnosisName="medical_check"
+        />
 
-        {/* 税理士CTA */}
-        <a
-          href={AFFILIATE_LINKS.tax_accountant_dot.url}
-          target="_blank"
-          rel="noopener noreferrer sponsored"
-          onClick={() => trackEvent('affiliate_click', { key: 'tax_accountant_dot', diagnosis: 'medical_check' })}
-          className="block bg-white border border-gray-200 hover:border-brand-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
-        >
-          <p className="text-xs text-gray-500 mb-0.5">PR</p>
-          <p className="text-sm font-bold text-gray-800 mb-0.5">確定申告を税理士に依頼 →</p>
-          <p className="text-xs text-gray-500">{AFFILIATE_LINKS.tax_accountant_dot.label}（相談無料）</p>
-        </a>
+        <AffiliateCTACard
+          linkKey="tax_accountant_keiei"
+          heading="確定申告を税理士に依頼 →"
+          desc="税理士法人経営サポートプラスアルファ（初回無料）"
+          diagnosisName="medical_check"
+        />
       </div>
 
       {/* 回遊バナー */}

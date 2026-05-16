@@ -71,7 +71,7 @@ export default function FudousanResult({ result, salePrice, onReset }: Props) {
     </div>
   );
 
-  const taxAccountant = AFFILIATE_LINKS.tax_accountant_dot;
+  const taxAccountant = AFFILIATE_LINKS.tax_accountant_keiei;
   const realEstateQuery = AFFILIATE_LINKS.realestate_query;
 
   return (
@@ -188,7 +188,7 @@ export default function FudousanResult({ result, salePrice, onReset }: Props) {
             className="flex flex-col gap-1 p-4 rounded-xl bg-brand-600 text-white hover:bg-brand-700 transition-colors"
           >
             <span className="font-bold text-base">税理士に相談して申告を確実にする →</span>
-            <span className="text-sm opacity-90">税理士ドットコムで無料相談（相談無料）</span>
+            <span className="text-sm opacity-90">{taxAccountant.label}（初回無料）</span>
           </a>
 
           <a

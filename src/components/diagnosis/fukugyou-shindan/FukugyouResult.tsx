@@ -6,6 +6,7 @@ import CrossLinkBanner from '@/components/common/CrossLinkBanner';
 import type { SideJobResult, FilingType, IncomeCategory } from '@/lib/diagnosis/fukugyou-shindan/types';
 import { trackEvent } from '@/lib/analytics';
 import { AFFILIATE_LINKS } from '@/lib/affiliate/links';
+import AffiliateCTACard from '@/components/common/AffiliateCTACard';
 
 type Props = {
   result: SideJobResult;
@@ -187,30 +188,19 @@ export default function FukugyouResult({ result, onReset }: Props) {
           <p className="text-xs opacity-80">{AFFILIATE_LINKS.accounting_freee.label}（30日間無料）</p>
         </a>
 
-        <a
-          href={AFFILIATE_LINKS.accounting_mf.url}
-          target="_blank"
-          rel="noopener noreferrer sponsored"
-          onClick={() => trackEvent('affiliate_click', { key: 'accounting_mf', diagnosis: 'fukugyou_shindan' })}
-          className="block bg-white border border-gray-200 hover:border-green-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
-        >
-          <p className="text-xs text-gray-500 mb-0.5">PR</p>
-          <p className="text-sm font-bold text-gray-800 mb-0.5">マネーフォワードで帳簿・青色申告 →</p>
-          <p className="text-xs text-gray-500">{AFFILIATE_LINKS.accounting_mf.label}</p>
-        </a>
+        <AffiliateCTACard
+          linkKey="accounting_mf"
+          heading="マネーフォワードで帳簿・青色申告 →"
+          diagnosisName="fukugyou_shindan"
+        />
 
         {(netIncome > 100 || canLossOffset) && (
-          <a
-            href={AFFILIATE_LINKS.tax_accountant_dot.url}
-            target="_blank"
-            rel="noopener noreferrer sponsored"
-            onClick={() => trackEvent('affiliate_click', { key: 'tax_accountant_dot', diagnosis: 'fukugyou_shindan' })}
-            className="block bg-white border border-gray-200 hover:border-green-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
-          >
-            <p className="text-xs text-gray-500 mb-0.5">PR</p>
-            <p className="text-sm font-bold text-gray-800 mb-0.5">複雑な申告は税理士に相談 →</p>
-            <p className="text-xs text-gray-500">{AFFILIATE_LINKS.tax_accountant_dot.label}（相談無料）</p>
-          </a>
+          <AffiliateCTACard
+            linkKey="tax_accountant_keiei"
+            heading="複雑な申告は税理士に相談 →"
+            desc="税理士法人経営サポートプラスアルファ（初回無料）"
+            diagnosisName="fukugyou_shindan"
+          />
         )}
 
         <Link

@@ -4,8 +4,7 @@ import Link from 'next/link';
 import ResultLayout from '@/components/diagnosis/shared/ResultLayout';
 import CrossLinkBanner from '@/components/common/CrossLinkBanner';
 import type { DualIncomeResult } from '@/lib/diagnosis/tomobataraki/types';
-import { trackEvent } from '@/lib/analytics';
-import { AFFILIATE_LINKS } from '@/lib/affiliate/links';
+import AffiliateCTACard from '@/components/common/AffiliateCTACard';
 
 type Props = {
   result: DualIncomeResult;
@@ -132,29 +131,19 @@ export default function TomobatarakiResult({ result, onReset }: Props) {
           <p className="text-xs opacity-80">税金払いすぎ診断（基本版）でiDeCoなどその他控除も確認</p>
         </Link>
 
-        <a
-          href={AFFILIATE_LINKS.insurance_review.url}
-          target="_blank"
-          rel="noopener noreferrer sponsored"
-          onClick={() => trackEvent('affiliate_click', { key: 'insurance_review', diagnosis: 'tomobataraki' })}
-          className="block bg-white border border-gray-200 hover:border-brand-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
-        >
-          <p className="text-xs text-gray-500 mb-0.5">PR</p>
-          <p className="text-sm font-bold text-gray-800 mb-0.5">保険料控除の空き枠を活用する →</p>
-          <p className="text-xs text-gray-500">{AFFILIATE_LINKS.insurance_review.label}（無料）</p>
-        </a>
+        <AffiliateCTACard
+          linkKey="insurance_mitsumoto"
+          heading="保険料控除の空き枠を活用する →"
+          desc="保険見直し本舗で無料相談（全国対応・何度でも無料）"
+          diagnosisName="tomobataraki"
+        />
 
-        <a
-          href={AFFILIATE_LINKS.tax_accountant_dot.url}
-          target="_blank"
-          rel="noopener noreferrer sponsored"
-          onClick={() => trackEvent('affiliate_click', { key: 'tax_accountant_dot', diagnosis: 'tomobataraki' })}
-          className="block bg-white border border-gray-200 hover:border-brand-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
-        >
-          <p className="text-xs text-gray-500 mb-0.5">PR</p>
-          <p className="text-sm font-bold text-gray-800 mb-0.5">年末調整・確定申告の疑問を税理士に相談 →</p>
-          <p className="text-xs text-gray-500">{AFFILIATE_LINKS.tax_accountant_dot.label}（相談無料）</p>
-        </a>
+        <AffiliateCTACard
+          linkKey="tax_accountant_keiei"
+          heading="年末調整・確定申告の疑問を税理士に相談 →"
+          desc="税理士法人経営サポートプラスアルファ（初回無料）"
+          diagnosisName="tomobataraki"
+        />
       </div>
 
       {/* 回遊バナー */}

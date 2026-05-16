@@ -6,6 +6,7 @@ import CrossLinkBanner from '@/components/common/CrossLinkBanner';
 import type { RetirementResult, RetirementPattern } from '@/lib/diagnosis/taishoku-sim/types';
 import { trackEvent } from '@/lib/analytics';
 import { AFFILIATE_LINKS } from '@/lib/affiliate/links';
+import AffiliateCTACard from '@/components/common/AffiliateCTACard';
 
 type Props = {
   result: RetirementResult;
@@ -162,27 +163,22 @@ export default function TaishokuResult({ result, onReset }: Props) {
         <h2 className="text-base font-bold text-gray-800 mb-1">次のアクション</h2>
 
         <a
-          href={AFFILIATE_LINKS.tax_accountant_dot.url}
+          href={AFFILIATE_LINKS.tax_accountant_keiei.url}
           target="_blank"
           rel="noopener noreferrer sponsored"
-          onClick={() => trackEvent('affiliate_click', { key: 'tax_accountant_dot', diagnosis: 'taishoku_sim' })}
+          onClick={() => trackEvent('affiliate_click', { key: 'tax_accountant_keiei', diagnosis: 'taishoku_sim' })}
           className="block bg-brand-600 hover:bg-brand-700 text-white rounded-xl px-5 py-4 transition-colors"
         >
           <p className="text-sm font-bold mb-0.5">退職金・iDeCoの受取設計を税理士に相談 →</p>
-          <p className="text-xs opacity-80">{AFFILIATE_LINKS.tax_accountant_dot.label}（相談無料）</p>
+          <p className="text-xs opacity-80">{AFFILIATE_LINKS.tax_accountant_keiei.label}（初回無料）</p>
         </a>
 
-        <a
-          href={AFFILIATE_LINKS.ideco_matsui.url}
-          target="_blank"
-          rel="noopener noreferrer sponsored"
-          onClick={() => trackEvent('affiliate_click', { key: 'ideco_matsui', diagnosis: 'taishoku_sim' })}
-          className="block bg-white border border-gray-200 hover:border-brand-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
-        >
-          <p className="text-xs text-gray-500 mb-0.5">PR</p>
-          <p className="text-sm font-bold text-gray-800 mb-0.5">iDeCoを始めて老後の節税と資産形成 →</p>
-          <p className="text-xs text-gray-500">{AFFILIATE_LINKS.ideco_matsui.label}</p>
-        </a>
+        <AffiliateCTACard
+          linkKey="ideco_matsui"
+          heading="iDeCoを始めて老後の節税と資産形成 →"
+          desc="松井証券でiDeCoを始める（手数料0円）"
+          diagnosisName="taishoku_sim"
+        />
 
         <Link
           href="/"

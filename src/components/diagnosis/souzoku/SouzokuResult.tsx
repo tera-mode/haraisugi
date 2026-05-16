@@ -6,6 +6,7 @@ import CrossLinkBanner from '@/components/common/CrossLinkBanner';
 import type { InheritanceResult } from '@/lib/diagnosis/souzoku/types';
 import { trackEvent } from '@/lib/analytics';
 import { AFFILIATE_LINKS } from '@/lib/affiliate/links';
+import AffiliateCTACard from '@/components/common/AffiliateCTACard';
 
 type Props = {
   result: InheritanceResult;
@@ -178,17 +179,12 @@ export default function SouzokuResult({ result, onReset }: Props) {
           <p className="text-xs opacity-80">{AFFILIATE_LINKS.inheritance_tax.label}（相談無料）</p>
         </a>
 
-        <a
-          href={AFFILIATE_LINKS.insurance_review.url}
-          target="_blank"
-          rel="noopener noreferrer sponsored"
-          onClick={() => trackEvent('affiliate_click', { key: 'insurance_review', diagnosis: 'souzoku' })}
-          className="block bg-white border border-gray-200 hover:border-brand-300 hover:shadow-sm rounded-xl px-5 py-4 transition-all"
-        >
-          <p className="text-xs text-gray-500 mb-0.5">PR</p>
-          <p className="text-sm font-bold text-gray-800 mb-0.5">生命保険の相続対策を無料相談 →</p>
-          <p className="text-xs text-gray-500">{AFFILIATE_LINKS.insurance_review.label}</p>
-        </a>
+        <AffiliateCTACard
+          linkKey="insurance_mitsumoto"
+          heading="生命保険の相続対策を無料相談 →"
+          desc="保険見直し本舗（全国対応・何度でも無料）"
+          diagnosisName="souzoku"
+        />
 
         <Link
           href="/taishoku-sim"
